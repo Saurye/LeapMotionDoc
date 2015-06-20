@@ -240,7 +240,7 @@ public class Hand extends Interface {
 	 * 
 	 * If your hand is flat, this vector will point downward, or “out” of the front surface of your palm.<p>
 	 * 
-	 * <img src="D:\Programming\eclipse\workspace\LeapMotionDoc\images\Leap_Palm_Vectors.png"/>
+	 * <img src="\images\Leap_Palm_Vectors.png"/><p>
 	 *  
 	 * The direction is expressed as a unit vector pointing in the same direction as the palm normal 
 	 * (that is, a vector orthogonal to the palm).
@@ -354,7 +354,7 @@ public class Hand extends Interface {
 	 * 
 	 * This sphere is placed roughly as if the hand were holding a ball.<p>
 	 * 
-	 * <img src="D:\Programming\eclipse\workspace\LeapMotionDoc\images\Leap_Hand_Ball.png"/>
+	 * <img src="\images\Leap_Hand_Ball.png"/><p>
 	 * 
 	 * @return The {@link Vector} representing the center position of the sphere.
 	 */

@@ -44,7 +44,7 @@ public class Device extends Interface {
 	/**
 	 * The angle of view along the x axis of this device.<p>
 	 * 
-	 * <img src="D:\Programming\eclipse\workspace\LeapMotionDoc\images\Leap_horizontalViewAngle.png"/>
+	 * <img src="\images\Leap_horizontalViewAngle.png"/><p>
 	 * 
 	 * The Leap Motion controller scans a region in the shape of an inverted pyramid centered at 
 	 * the device’s center and extending upwards. 
@@ -63,7 +63,7 @@ public class Device extends Interface {
 	/**
 	 * The angle of view along the z axis of this device.<p>
 	 * 
-	 * <img src="D:\Programming\eclipse\workspace\LeapMotionDoc\images\Leap_verticalViewAngle.png"/>
+	 * <img src="\images\Leap_verticalViewAngle.png"/><p>
 	 * 
 	 * The Leap Motion controller scans a region in the shape of an inverted pyramid centered at 
 	 * the device’s center and extending upwards. 

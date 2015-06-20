@@ -6,7 +6,7 @@ package com.leapmotion.leap;
  * A circle movement is recognized when the tip of a finger draws a circle within the 
  * Leap Motion {@link Controller} field of view.<p>
  * 
- * <img src="D:\Programming\eclipse\workspace\LeapMotionDoc\images\Leap_Gesture_Circle.png"/>
+ * <img src="\images\Leap_Gesture_Circle.png"/><p>
  * 
  * <b>Important:</b> To use circle gestures in your application, you must enable recognition of the circle gesture. 
  * You can enable recognition with:
