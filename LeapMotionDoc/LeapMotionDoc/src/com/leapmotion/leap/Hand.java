@@ -704,7 +704,7 @@ public class Hand extends Interface {
 	 * Two {@code Hand} objects are equal if and only if both {@code Hand} objects 
 	 * represent the exact same physical hand in the same frame and both {@code Hand} objects are valid.
 	 * 
-	 * @param hand - {@code GesHandture} object to compare
+	 * @param hand - {@code Hand} object to compare
 	 * 
 	 * @return true if the {@code Hand} objects are equal.
 	 */
