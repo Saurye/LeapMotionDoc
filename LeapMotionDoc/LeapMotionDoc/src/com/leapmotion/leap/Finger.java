@@ -45,7 +45,7 @@ public class Finger extends Pointable {
 	 * Finger finger = new Finger(pointableObject);
 	 * </pre></blockquote>
 	 * 
-	 * @param pointable - a given {@link Pointable} object
+	 * @param pointable - A given {@link Pointable} object.
 	 */
 	public Finger(Pointable pointable) {
 		this(LeapJNI.new_Finger__SWIG_1(Pointable.getCPtr(pointable), pointable), true);
