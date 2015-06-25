@@ -106,10 +106,10 @@ public class Gesture extends Interface {
 	private long swigCPtr;
 
 	/**
-	 * Constructs a new {@code Gesture} object.<p>
+	 * Constructs a new {@link Gesture} object.<p>
 	 * 
-	 * An uninitialized {@code Gesture} object is considered invalid. 
-	 * Get valid instances of the {@code Gesture} class, which will be one of the {@code Gesture} subclasses, 
+	 * An uninitialized {@link Gesture} object is considered invalid. 
+	 * Get valid instances of the {@link Gesture} class, which will be one of the {@link Gesture} subclasses, 
 	 * from a {@link Frame} object.
 	 */
 	public Gesture() {
@@ -117,13 +117,13 @@ public class Gesture extends Interface {
 	}
 
 	/**
-	 * Constructs a new copy of an {@code Gesture} object.
+	 * Constructs a new copy of an {@link Gesture} object.
 	 * 
 	 * <blockquote><pre>
 	 * Gesture copy = new Gesture(gesture);
 	 * </pre></blockquote>
 	 * 
-	 * @param rhs - {@code Gesture} object to copy.
+	 * @param rhs - {@link Gesture} object to copy.
 	 */
 	public Gesture(Gesture rhs) {
 		this(LeapJNI.new_Gesture__SWIG_1(getCPtr(rhs), rhs), true);
@@ -170,7 +170,7 @@ public class Gesture extends Interface {
 	 * The gesture state.<p>
 	 * 
 	 * Recognized movements occur over time and have a beginning, a middle, and an end. 
-	 * The {@code state()} attribute reports where in that sequence this {@code Gesture} object falls.
+	 * The {@code state()} attribute reports where in that sequence this {@link Gesture} object falls.
 	 * 
 	 * <blockquote><pre>
 	 * for(Gesture gestureObj : frame.gestures()) {
@@ -202,7 +202,7 @@ public class Gesture extends Interface {
 	 * 
 	 * All Gesture objects belonging to the same recognized movement share the same ID value. 
 	 * Use the ID value with the {@link Frame#gesture(int)} method to find updates related to this 
-	 * {@code Gesture} object in subsequent frames.
+	 * {@link Gesture} object in subsequent frames.
 	 * 
 	 * <blockquote><pre>
 	 * int gestureToFind = gesture.id();
@@ -214,7 +214,7 @@ public class Gesture extends Interface {
 	 * }
 	 * </pre></blockquote>
 	 * 
-	 * @return the ID of this {@code Gesture}.
+	 * @return the ID of this {@link Gesture}.
 	 */
 	public int id() {
 		return LeapJNI.Gesture_id(this.swigCPtr, this);
@@ -227,7 +227,7 @@ public class Gesture extends Interface {
 	 * float microseconds = gesture.duration();
 	 * </pre></blockquote>
 	 * 
-	 * The duration reported for the first {@code Gesture} in the sequence (with the STATE_START state) 
+	 * The duration reported for the first {@link Gesture} in the sequence (with the STATE_START state) 
 	 * will typically be a small positive number since the movement must progress far enough for 
 	 * the Leap Motion software to recognize it as an intentional gesture.
 	 * 
@@ -253,7 +253,7 @@ public class Gesture extends Interface {
 	}
 
 	/**
-	 * The {@link Frame} containing this {@code Gesture} instance.
+	 * The {@link Frame} containing this {@link Gesture} instance.
 	 * 
 	 * <blockquote><pre>
 	 * Frame frameOfGesture = gesture.frame();
@@ -266,7 +266,7 @@ public class Gesture extends Interface {
 	}
 
 	/**
-	 * The list of hands associated with this {@code Gesture}, if any.
+	 * The list of hands associated with this {@link Gesture}, if any.
 	 * 
 	 * <blockquote><pre>
 	 * HandList handsForGesture = gesture.hands();
@@ -281,7 +281,7 @@ public class Gesture extends Interface {
 	}
 
 	/**
-	 * The list of fingers and tools associated with this {@code Gesture}, if any.<p>
+	 * The list of fingers and tools associated with this {@link Gesture}, if any.<p>
 	 * 
 	 * If no {@link Pointable} objects are related to this gesture, the list is empty.
 	 * 
@@ -296,13 +296,13 @@ public class Gesture extends Interface {
 	}
 
 	/**
-	 * Reports whether this {@code Gesture} instance represents a valid {@code Gesture}.<p>
+	 * Reports whether this {@link Gesture} instance represents a valid {@link Gesture}.<p>
 	 * 
-	 * An invalid {@code Gesture} object does not represent a snapshot of a recognized movement. 
-	 * Invalid {@code Gesture} objects are returned when a valid object cannot be provided. 
+	 * An invalid {@link Gesture} object does not represent a snapshot of a recognized movement. 
+	 * Invalid {@link Gesture} objects are returned when a valid object cannot be provided. 
 	 * For example, when you get an gesture by ID using {@link Frame#gesture(int)}, 
 	 * and there is no gesture with that ID in the current frame, 
-	 * then {@link Frame#gesture(int)} returns an Invalid {@code Gesture} object (rather than a null value). 
+	 * then {@link Frame#gesture(int)} returns an Invalid {@link Gesture} object (rather than a null value). 
 	 * Always check object validity in situations where an gesture might be invalid.
 	 * 
 	 * <blockquote><pre>
@@ -311,14 +311,14 @@ public class Gesture extends Interface {
 	 * }
 	 * </pre></blockquote>
 	 * 
-	 * @return true, if this is a valid {@code Gesture} instance; false, otherwise.
+	 * @return true, if this is a valid {@link Gesture} instance; false, otherwise.
 	 */
 	public boolean isValid() {
 		return LeapJNI.Gesture_isValid(this.swigCPtr, this);
 	}
 
 	/**
-	 * Compare {@code Gesture} object equality.
+	 * Compare {@link Gesture} object equality.
 	 * 
 	 * <blockquote><pre>
 	 * Boolean gestureIsEqual = thisGesture.equals(thatGesture);
@@ -326,9 +326,9 @@ public class Gesture extends Interface {
 	 * 
 	 * Two Gestures are equal if they represent the same snapshot of the same recognized movement.
 	 * 
-	 * @param rhs - {@code Gesture} object to compare
+	 * @param rhs - {@link Gesture} object to compare
 	 * 
-	 * @return true if the {@code Gesture} objects are equal.
+	 * @return true if the {@link Gesture} objects are equal.
 	 */
 	public boolean equals(Gesture rhs) {
 		return LeapJNI.Gesture_equals(this.swigCPtr, this, getCPtr(rhs), rhs);
@@ -343,17 +343,17 @@ public class Gesture extends Interface {
 	 * }
 	 * </pre></blockquote>
 	 * 
-	 * @return A description of the {@code Gesture} object as a string.
+	 * @return A description of the {@link Gesture} object as a string.
 	 */
 	public String toString() {
 		return LeapJNI.Gesture_toString(this.swigCPtr, this);
 	}
 
 	/**
-	 * Returns an invalid {@code Gesture} object.<p>
+	 * Returns an invalid {@link Gesture} object.<p>
 	 * 
 	 * You can use the instance returned by this function in comparisons testing whether 
-	 * a given {@code Gesture} instance is valid or invalid. 
+	 * a given {@link Gesture} instance is valid or invalid. 
 	 * (You can also use the {@link Gesture#isValid()} function.)
 	 * 
 	 * <blockquote><pre>
@@ -363,7 +363,7 @@ public class Gesture extends Interface {
 	 * }
 	 * </pre></blockquote>
 	 * 
-	 * @return The invalid {@code Gesture} instance.
+	 * @return The invalid {@link Gesture} instance.
 	 */
 	public static Gesture invalid() {
 		return new Gesture(LeapJNI.Gesture_invalid(), false);

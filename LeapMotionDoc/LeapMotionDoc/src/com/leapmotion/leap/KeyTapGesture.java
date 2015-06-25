@@ -64,17 +64,17 @@ public class KeyTapGesture extends Gesture {
 	private long swigCPtr;
 
 	/**
-	 * Constructs a new {@code KeyTapGesture} object.<p>
+	 * Constructs a new {@link KeyTapGesture} object.<p>
 	 * 
-	 * An uninitialized {@code KeyTapGesture} object is considered invalid. 
-	 * Get valid instances of the {@code KeyTapGesture} class from a Frame object.
+	 * An uninitialized {@link KeyTapGesture} object is considered invalid. 
+	 * Get valid instances of the {@link KeyTapGesture} class from a Frame object.
 	 */
 	public KeyTapGesture() {
 		this(LeapJNI.new_KeyTapGesture__SWIG_0(), true);
 	}
 	
 	/**
-	 * Constructs a {@code KeyTapGesture} object from an instance of the {@link Gesture} class.
+	 * Constructs a {@link KeyTapGesture} object from an instance of the {@link Gesture} class.
 	 * 
 	 * <blockquote><pre>
 	 * if(gesture.type() == KeyTapGesture.classType()) {
@@ -83,7 +83,7 @@ public class KeyTapGesture extends Gesture {
 	 * </pre></blockquote>
 	 * 
 	 * @param rhs - The {@link Gesture} instance to specialize. 
-	 * This {@link Gesture} instance must be a {@code KeyTapGesture} object.
+	 * This {@link Gesture} instance must be a {@link KeyTapGesture} object.
 	 */
 	public KeyTapGesture(Gesture rhs) {
 		this(LeapJNI.new_KeyTapGesture__SWIG_1(Gesture.getCPtr(rhs), rhs), true);

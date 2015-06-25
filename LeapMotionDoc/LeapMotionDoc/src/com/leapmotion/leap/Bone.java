@@ -33,13 +33,13 @@ public class Bone extends Interface {
 	private long swigCPtr;
 
 	/**
-	 * Constructs an invalid {@code Bone} object.<p>
+	 * Constructs an invalid {@link Bone} object.<p>
 	 * 
 	 * <blockquote><pre>
 	 * Bone bone = Bone.invalid();
 	 * </pre></blockquote>
 	 * 
-	 * Get valid {@code Bone} objects from a {@link Finger} object.
+	 * Get valid {@link Bone} objects from a {@link Finger} object.
 	 */
 	public Bone() {
 		this(LeapJNI.new_Bone(), true);
@@ -147,7 +147,7 @@ public class Bone extends Interface {
 	}
 
 	/**
-	 * The orthonormal basis vectors for this {@code Bone} as a {@link Matrix}.<p>
+	 * The orthonormal basis vectors for this {@link Bone} as a {@link Matrix}.<p>
 	 * 
 	 * Basis vectors specify the orientation of a bone.<p>
 	 * 
@@ -182,7 +182,7 @@ public class Bone extends Interface {
 	}
 
 	/**
-	 * Reports whether this is a valid {@code Bone} object.
+	 * Reports whether this is a valid {@link Bone} object.
 	 * 
 	 * <blockquote><pre>
 	 * Bone bone = finger.bone(Bone.Type.TYPE_PROXIMAL);
@@ -191,49 +191,49 @@ public class Bone extends Interface {
 	 * }
 	 * </pre></blockquote>
 	 * 
-	 * @return True, if this {@code Bone} object contains valid tracking data.
+	 * @return True, if this {@link Bone} object contains valid tracking data.
 	 */
 	public boolean isValid() {
 		return LeapJNI.Bone_isValid(this.swigCPtr, this);
 	}
 
 	/**
-	 * Returns an invalid {@code Bone} object.<p>
+	 * Returns an invalid {@link Bone} object.<p>
 	 * You can use the instance returned by this function in comparisons testing whether a given 
-	 * {@code Bone} instance is valid or invalid. (You can also use the {@link Bone#isValid()} function.)
+	 * {@link Bone} instance is valid or invalid. (You can also use the {@link Bone#isValid()} function.)
 	 * 
 	 * <blockquote><pre>
 	 * Bone bone = Bone.invalid();
 	 * </pre></blockquote>
 	 * 
-	 * @return The invalid {@code Bone} instance.
+	 * @return The invalid {@link Bone} instance.
 	 */
 	public static Bone invalid() {
 		return new Bone(LeapJNI.Bone_invalid(), false);
 	}
 
 	/**
-	 * Compare {@code Bone} object equality.<p>
+	 * Compare {@link Bone} object equality.<p>
 	 * 
-	 * Two {@code Bone} objects are equal if and only if both {@code Bone} objects represent the exact same physical bone
-	 * in the same frame and both {@code Bone} objects are valid.
+	 * Two {@link Bone} objects are equal if and only if both {@link Bone} objects represent the exact same physical bone
+	 * in the same frame and both {@link Bone} objects are valid.
 	 * 
-	 * @param bone - {@code Bone} object to compare
+	 * @param bone - {@link Bone} object to compare
 	 * 
-	 * @return true if the {@code Bone} objects are equal.
+	 * @return true if the {@link Bone} objects are equal.
 	 */
 	public boolean equals(Bone bone) {
 		return LeapJNI.Bone_equals(this.swigCPtr, this, getCPtr(bone), bone);
 	}
 
 	/**
-	 * A string containing a brief, human readable description of the {@code Bone} object.
+	 * A string containing a brief, human readable description of the {@link Bone} object.
 	 * 
 	 * <blockquote><pre>
 	 * String description = bone.toString();
 	 * </pre></blockquote>
 	 * 
-	 * @return A description of the {@code Bone} object as a string.
+	 * @return A description of the {@link Bone} object as a string.
 	 */
 	public String toString() {
 		return LeapJNI.Bone_toString(this.swigCPtr, this);
@@ -261,7 +261,7 @@ public class Bone extends Interface {
 	/**
 	 * Enumerates the names of the bones.<p>
 	 * 
-	 * Members of this enumeration are returned by {@link Bone#type()} to identify a {@code Bone} object.
+	 * Members of this enumeration are returned by {@link Bone#type()} to identify a {@link Bone} object.
 	 * 
 	 * @Since 2.0
 	 * @author Leap Motion Inc

@@ -22,14 +22,14 @@ public class Vector {
 	protected boolean swigCMemOwn;
 
 	/**
-	 * Creates a new {@code Vector} with all components set to zero.
+	 * Creates a new {@link Vector} with all components set to zero.
 	 */
 	public Vector() {
 		this(LeapJNI.new_Vector__SWIG_0(), true);
 	}
 	
 	/**
-	 * Creates a new {@code Vector} with the specified component values.
+	 * Creates a new {@link Vector} with the specified component values.
 	 * 
 	 * <blockquote><pre>
 	 * Vector newVector = new Vector(0.5f, 200.3f, 67f);
@@ -44,13 +44,13 @@ public class Vector {
 	}
 	
 	/**
-	 * Copies the specified {@code Vector}.
+	 * Copies the specified {@link Vector}.
 	 * 
 	 * <blockquote><pre>
 	 * Vector copiedVector = new Vector(otherVector);
 	 * </pre></blockquote>
 	 * 
-	 * @param other - A {@code Vector} object to copy.
+	 * @param other - A {@link Vector} object to copy.
 	 */
 	public Vector(Vector other) {
 		this(LeapJNI.new_Vector__SWIG_2(getCPtr(other), other), true);
@@ -62,11 +62,11 @@ public class Vector {
 	}
 
 	/**
-	 * The {@code Vector} in a float array representation.<p>
+	 * The {@link Vector} in a float array representation.<p>
 	 * 
 	 * Index 0 is x, index 1 is y, and index 2 is z.
 	 * 
-	 * @return The {@code Vector} in a float array representation.
+	 * @return The {@link Vector} in a float array representation.
 	 */
 	public float[] toFloatArray() {
 		return new float[] { getX(), getY(), getZ() };
@@ -206,7 +206,7 @@ public class Vector {
 	 * The magnitude, or length, of this vector.<p>
 	 * 
 	 * The magnitude is the L2 norm, or Euclidean distance between the origin and the point 
-	 * represented by the (x, y, z) components of this {@code Vector} object.
+	 * represented by the (x, y, z) components of this {@link Vector} object.
 	 * 
 	 * <blockquote><pre>
 	 * float length = thisVector.magnitude();
@@ -232,8 +232,8 @@ public class Vector {
 	}
 
 	/**
-	 * The distance between the point represented by this {@code Vector} object 
-	 * and a point represented by the specified {@code Vector} object.
+	 * The distance between the point represented by this {@link Vector} object 
+	 * and a point represented by the specified {@link Vector} object.
 	 * 
 	 * <blockquote><pre>
 	 * Vector aPoint = new Vector(10f, 0f, 0f);
@@ -241,7 +241,7 @@ public class Vector {
 	 * float distance = origin.distanceTo(aPoint); // distance = 10
 	 * </pre></blockquote>
 	 * 
-	 * @param other - A {@code Vector} object.
+	 * @param other - A {@link Vector} object.
 	 * 
 	 * @return The distance from this point to the specified point.
 	 */
@@ -266,7 +266,7 @@ public class Vector {
 	 * // angleInRadians = PI/2 (90 degrees)
 	 * </pre></blockquote>
 	 * 
-	 * @param other - A {@code Vector} object.
+	 * @param other - A {@link Vector} object.
 	 * 
 	 * @return The angle between this vector and the specified vector in radians.
 	 */
@@ -350,7 +350,7 @@ public class Vector {
 	 * float dotProduct = thisVector.dot(thatVector);
 	 * </pre></blockquote>
 	 * 
-	 * @param other - A {@code Vector} object.
+	 * @param other - A {@link Vector} object.
 	 * @return The dot product of this vector and the specified vector.
 	 */
 	public float dot(Vector other) {
@@ -371,7 +371,7 @@ public class Vector {
 	 * Vector crossProduct = thisVector.cross(thatVector);
 	 * </pre></blockquote>
 	 * 
-	 * @param other - A {@code Vector} object.
+	 * @param other - A {@link Vector} object.
 	 * 
 	 * @return The cross product of this vector and the specified vector.
 	 */
@@ -388,8 +388,8 @@ public class Vector {
 	 * Vector normalizedVector = otherVector.normalized();
 	 * </pre></blockquote>
 	 * 
-	 * @return A {@code Vector} object with a length of one, 
-	 * pointing in the same direction as this {@code Vector} object.
+	 * @return A {@link Vector} object with a length of one, 
+	 * pointing in the same direction as this {@link Vector} object.
 	 */
 	public Vector normalized() {
 		return new Vector(LeapJNI.Vector_normalized(this.swigCPtr, this), true);
@@ -402,7 +402,7 @@ public class Vector {
 	 * Vector negation = thisVector.opposite();
 	 * </pre></blockquote>
 	 * 
-	 * @return A {@code Vector} object with all components negated.
+	 * @return A {@link Vector} object with all components negated.
 	 */
 	public Vector opposite() {
 		return new Vector(LeapJNI.Vector_opposite(this.swigCPtr, this), true);
@@ -415,7 +415,7 @@ public class Vector {
 	 * Vector sum = thisVector.plus(thatVector);
 	 * </pre></blockquote>
 	 * 
-	 * @param other - A {@code Vector} object.
+	 * @param other - A {@link Vector} object.
 	 * 
 	 * @return The component-wise addition of this vector and the specified vector.
 	 */
@@ -430,7 +430,7 @@ public class Vector {
 	 * Vector difference = thisVector.minus(thatVector);
 	 * </pre></blockquote>
 	 * 
-	 * @param other - A {@code Vector} object.
+	 * @param other - A {@link Vector} object.
 	 * 
 	 * @return The component-wise subtraction of this vector and the specified vector.
 	 */
@@ -471,22 +471,22 @@ public class Vector {
 	/**
 	 * Returns a string containing this vector in a human readable format: (x, y, z).
 	 * 
-	 * @return A description of the {@code Vector} object as a string.
+	 * @return A description of the {@link Vector} object as a string.
 	 */
 	public String toString() {
 		return LeapJNI.Vector_toString(this.swigCPtr, this);
 	}
 
 	/**
-	 * Compare {@code Vector} equality component-wise.
+	 * Compare {@link Vector} equality component-wise.
 	 * 
 	 * <blockquote><pre>
 	 * boolean vectorsAreEqual = thisVector == thatVector;
 	 * </pre></blockquote>
 	 * 
-	 * @param other - {@code Vector} object to compare
+	 * @param other - {@link Vector} object to compare
 	 * 
-	 * @return true if the {@code Vector} objects are equal.
+	 * @return true if the {@link Vector} objects are equal.
 	 */
 	public boolean equals(Vector other) {
 		return LeapJNI.Vector_equals(this.swigCPtr, this, getCPtr(other), other);
@@ -520,7 +520,7 @@ public class Vector {
 	 * 
 	 * @param index - the requested index.
 	 * 
-	 * @return The x, y, or z component of this {@code Vector}, 
+	 * @return The x, y, or z component of this {@link Vector}, 
 	 * if the specified index value is at least 0 and at most 2; otherwise, returns zero.
 	 */
 	public float get(long index) {

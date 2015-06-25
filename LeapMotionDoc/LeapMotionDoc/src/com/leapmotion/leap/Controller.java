@@ -43,9 +43,9 @@ public class Controller extends Interface {
 	private long swigCPtr;
 
 	/**
-	 * Constructs a {@code Controller} object.<p>
+	 * Constructs a {@link Controller} object.<p>
 	 * 
-	 * When creating a {@code Controller} object, you may optionally pass in a reference to 
+	 * When creating a {@link Controller} object, you may optionally pass in a reference to 
 	 * an instance of a subclass of {@link Listener}. 
 	 * Alternatively, you may add a listener using the {@link Controller#addListener(Listener)} function.
 	 */
@@ -54,9 +54,9 @@ public class Controller extends Interface {
 	}
 
 	/**
-	 * Constructs a {@code Controller} object.<p>
+	 * Constructs a {@link Controller} object.<p>
 	 * 
-	 * When creating a {@code Controller} object, you may optionally pass in a reference to 
+	 * When creating a {@link Controller} object, you may optionally pass in a reference to 
 	 * an instance of a subclass of {@link Listener}. 
 	 * Alternatively, you may add a listener using the {@link Controller#addListener(Listener)} function.
 	 * 
@@ -79,10 +79,10 @@ public class Controller extends Interface {
 	}
 
 	/**
-	 * Reports whether this {@code Controller} is connected to the Leap Motion service and the 
+	 * Reports whether this {@link Controller} is connected to the Leap Motion service and the 
 	 * Leap Motion hardware is plugged in.<p>
 	 * 
-	 * When you first create a {@code Controller} object, {@code isConnected()} returns false. 
+	 * When you first create a {@link Controller} object, {@code isConnected()} returns false. 
 	 * After the controller finishes initializing and connects to the Leap Motion software and if the 
 	 * Leap Motion hardware is plugged in, {@code isConnected()} returns true.<p>
 	 * 
@@ -220,11 +220,11 @@ public class Controller extends Interface {
 	}
 
 	/**
-	 * Adds a listener to this {@code Controller}.<p>
+	 * Adds a listener to this {@link Controller}.<p>
 	 * 
-	 * The {@code Controller} dispatches Leap Motion events to each associated listener. 
+	 * The {@link Controller} dispatches Leap Motion events to each associated listener. 
 	 * The order in which listener callback functions are invoked is arbitrary. 
-	 * If you pass a listener to the {@code Controller}‘s constructor function, 
+	 * If you pass a listener to the {@link Controller}‘s constructor function, 
 	 * it is automatically added to the list and can be removed with the {@link Controller#removeListener(Listener)} function.
 	 * 
 	 * <blockquote><pre>
@@ -232,7 +232,7 @@ public class Controller extends Interface {
 	 * controller.addListener(listener);
 	 * </pre></blockquote>
 	 * 
-	 * The {@code Controller} does not keep a strong reference to the {@link Listener} instance. 
+	 * The {@link Controller} does not keep a strong reference to the {@link Listener} instance. 
 	 * Ensure that you maintain a reference until the listener is removed from the controller.
 	 * 
 	 * @param listener - A subclass of {@link Listener} implementing the callback functions for 
@@ -363,7 +363,7 @@ public class Controller extends Interface {
 	 * boolean saved = controller.config().save();
 	 * </pre></blockquote>
 	 * 
-	 * @return The {@code Controller}‘s {@link Config} object.
+	 * @return The {@link Controller}‘s {@link Config} object.
 	 */
 	public Config config() {
 		return new Config(LeapJNI.Controller_config(this.swigCPtr, this), true);
@@ -378,7 +378,7 @@ public class Controller extends Interface {
 	 * DeviceList connectedLeaps = controller.devices();
 	 * </pre></blockquote>
 	 * 
-	 * Currently, the Leap Motion {@code Controller} only allows a single active device at a time, 
+	 * Currently, the Leap Motion {@link Controller} only allows a single active device at a time, 
 	 * however there may be multiple devices physically attached and listed here. 
 	 * Any active device(s) are guaranteed to be listed first, however order is not determined beyond that.
 	 * 

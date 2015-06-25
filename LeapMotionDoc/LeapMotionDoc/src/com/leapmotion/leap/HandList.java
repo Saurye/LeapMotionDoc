@@ -84,12 +84,12 @@ public class HandList extends Interface implements Iterable<Hand> {
 	}
 
 	/**
-	 * Appends the members of the specified {@code HandList} to this {@code HandList}.
+	 * Appends the members of the specified {@link HandList} to this {@link HandList}.
 	 * 
-	 * @param other - A {@code HandList} object containing {@link Hand} objects 
-	 * to append to the end of this {@code HandList}.
+	 * @param other - A {@link HandList} object containing {@link Hand} objects 
+	 * to append to the end of this {@link HandList}.
 	 * 
-	 * @return the {@code HandList}, containing the members of {@code other}.
+	 * @return the {@link HandList}, containing the members of {@code other}.
 	 */
 	public HandList append(HandList other) {
 		return new HandList(LeapJNI.HandList_append(this.swigCPtr, this, getCPtr(other), other), false);

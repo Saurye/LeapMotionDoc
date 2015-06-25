@@ -10,8 +10,8 @@ public class Arm extends Interface {
 	private long swigCPtr;
 
 	/**
-	 * Constructs an invalid {@code Arm} object.
-	 * Get valid {@code Arm} objects from a {@link Hand} object.
+	 * Constructs an invalid {@link Arm} object.
+	 * Get valid {@link Arm} objects from a {@link Hand} object.
 	 * <blockquote><pre>
 	 * Hand hand = frame.hands().frontmost();
 	 * Arm arm = hand.arm();
@@ -58,7 +58,7 @@ public class Arm extends Interface {
 	}
 
 	/**
-	 * The orthonormal basis vectors for the {@code Arm} bone as a {@link Matrix}.<br>
+	 * The orthonormal basis vectors for the {@link Arm} bone as a {@link Matrix}.<br>
 	 * Basis vectors specify the orientation of a bone.<p>
 	 * 
 	 * <b>xBasis</b> Perpendicular to the longitudinal axis of the bone; 
@@ -130,7 +130,7 @@ public class Arm extends Interface {
 	}
 
 	/**
-	 * Reports whether this is a valid {@code Arm} object.<p>
+	 * Reports whether this is a valid {@link Arm} object.<p>
 	 * 
 	 * <blockquote><pre>
 	 * Arm arm = frame.hand(handID).arm();
@@ -139,51 +139,51 @@ public class Arm extends Interface {
 	 * }
 	 * </pre></blockquote>
 	 * 
-	 * @return True, if this {@code Arm} object contains valid tracking data.
+	 * @return True, if this {@link Arm} object contains valid tracking data.
 	 */
 	public boolean isValid() {
 		return LeapJNI.Arm_isValid(this.swigCPtr, this);
 	}
 
 	/**
-	 * Returns an invalid {@code Arm} object.<p>
+	 * Returns an invalid {@link Arm} object.<p>
 	 * 
 	 * <blockquote><pre>
 	 * Arm arm = Arm.invalid();
 	 * </pre></blockquote>
 	 * 
-	 * @return The invalid {@code Arm} instance.
+	 * @return The invalid {@link Arm} instance.
 	 */
 	public static Arm invalid() {
 		return new Arm(LeapJNI.Arm_invalid(), false);
 	}
 
 	/**
-	 * Compare {@code Arm} object equality.<p>
+	 * Compare {@link Arm} object equality.<p>
 	 * 
 	 * <blockquote><pre>
 	 * thisArm.equals(thatArm);
 	 * </pre></blockquote>
 	 * 
-	 * Two {@code Arm} objects are equal if and only if both {@code Arm} objects represent the exact same physical 
-	 * arm in the same frame and both {@code Arm} objects are valid.<p>
+	 * Two {@link Arm} objects are equal if and only if both {@link Arm} objects represent the exact same physical 
+	 * arm in the same frame and both {@link Arm} objects are valid.<p>
 	 * 
-	 * @param {@code Arm} object to compare
+	 * @param {@link Arm} object to compare
 	 * 
-	 * @return true if the {@code Arm} objects are equal.
+	 * @return true if the {@link Arm} objects are equal.
 	 */
 	public boolean equals(Arm paramArm) {
 		return LeapJNI.Arm_equals(this.swigCPtr, this, getCPtr(paramArm), paramArm);
 	}
 
 	/**
-	 * A string containing a brief, human readable description of the {@code Arm} object.<p>
+	 * A string containing a brief, human readable description of the {@link Arm} object.<p>
 	 * 
 	 * <blockquote><pre>
 	 * String description = arm.toString();
 	 * </pre></blockquote>
 	 * 
-	 * @return A description of the {@code Arm} object as a string. 
+	 * @return A description of the {@link Arm} object as a string. 
 	 */
 	public String toString() {
 		return LeapJNI.Arm_toString(this.swigCPtr, this);

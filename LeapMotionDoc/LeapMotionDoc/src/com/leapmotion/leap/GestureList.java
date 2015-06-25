@@ -80,12 +80,12 @@ public class GestureList extends Interface implements Iterable<Gesture> {
 	}
 
 	/**
-	 * Appends the members of the specified {@code GestureList} to this {@code GestureList}.
+	 * Appends the members of the specified {@link GestureList} to this {@link GestureList}.
 	 * 
-	 * @param other - A {@code GestureList} object containing {@link Gesture} objects 
-	 * to append to the end of this {@code GestureList}.
+	 * @param other - A {@link GestureList} object containing {@link Gesture} objects 
+	 * to append to the end of this {@link GestureList}.
 	 * 
-	 * @return the {@code GestureList}, containing the members of {@code other}.
+	 * @return the {@link GestureList}, containing the members of {@code other}.
 	 */
 	public GestureList append(GestureList other) {
 		return new GestureList(LeapJNI.GestureList_append(this.swigCPtr, this, getCPtr(other), other), false);

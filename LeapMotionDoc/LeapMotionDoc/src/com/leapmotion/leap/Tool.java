@@ -23,9 +23,9 @@ public class Tool extends Pointable {
 	private long swigCPtr;
 	
 	/**
-	 * Constructs a {@code Tool} object.<p>
+	 * Constructs a {@link Tool} object.<p>
 	 * 
-	 * An uninitialized tool is considered invalid. Get valid {@code Tool} objects from a {@link Frame} object.
+	 * An uninitialized tool is considered invalid. Get valid {@link Tool} objects from a {@link Frame} object.
 	 * 
 	 * <blockquote><pre>
 	 * Tool frontTool = frame.tools().frontmost();
@@ -38,8 +38,8 @@ public class Tool extends Pointable {
 	
 	/**
 	 * If the specified {@link Pointable} object represents a tool, 
-	 * creates a copy of it as a {@code Tool} object; 
-	 * otherwise, creates an invalid {@code Tool} object.
+	 * creates a copy of it as a {@link Tool} object; 
+	 * otherwise, creates an invalid {@link Tool} object.
 	 * 
 	 * <blockquote><pre>
 	 * if (pointable.isTool()) {
@@ -59,10 +59,10 @@ public class Tool extends Pointable {
 	}
 
 	/**
-	 * Returns an invalid {@code Tool} object.<p>
+	 * Returns an invalid {@link Tool} object.<p>
 	 * 
 	 * You can use the instance returned by this function in comparisons testing 
-	 * whether a given {@code Tool} instance is valid or invalid. 
+	 * whether a given {@link Tool} instance is valid or invalid. 
 	 * (You can also use the {@link Tool#isValid()} function.)
 	 * 
 	 * <blockquote><pre>
@@ -71,16 +71,16 @@ public class Tool extends Pointable {
 	 * }
 	 * </pre></blockquote>
 	 * 
-	 * @return The invalid {@code Tool} instance.
+	 * @return The invalid {@link Tool} instance.
 	 */
 	public static Tool invalid() {
 		return new Tool(LeapJNI.Tool_invalid(), false);
 	}
 
 	/**
-	 * A string containing a brief, human readable description of the {@code Tool} object.
+	 * A string containing a brief, human readable description of the {@link Tool} object.
 	 * 
-	 * @return A description of the {@code Tool} object as a string.
+	 * @return A description of the {@link Tool} object as a string.
 	 */
 	public String toString() {
 		return LeapJNI.Tool_toString(this.swigCPtr, this);

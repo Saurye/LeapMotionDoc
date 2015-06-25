@@ -56,17 +56,17 @@ public class SwipeGesture extends Gesture {
 	private long swigCPtr;
 
 	/**
-	 * Constructs a new {@code SwipeGesture} object.<p>
+	 * Constructs a new {@link SwipeGesture} object.<p>
 	 * 
-	 * An uninitialized {@code SwipeGesture} object is considered invalid. 
-	 * Get valid instances of the {@code SwipeGesture} class from a {@link Frame} object.
+	 * An uninitialized {@link SwipeGesture} object is considered invalid. 
+	 * Get valid instances of the {@link SwipeGesture} class from a {@link Frame} object.
 	 */
 	public SwipeGesture() {
 		this(LeapJNI.new_SwipeGesture__SWIG_0(), true);
 	}
 
 	/**
-	 * Constructs a {@code SwipeGesture} object from an instance of the {@link Gesture} class.
+	 * Constructs a {@link SwipeGesture} object from an instance of the {@link Gesture} class.
 	 * 
 	 * <blockquote><pre>
 	 * if(gesture.type() == Gesture.Type.TYPE_SWIPE) {
@@ -75,7 +75,7 @@ public class SwipeGesture extends Gesture {
 	 * </pre></blockquote>
 	 * 
 	 * @param rhs - The {@link Gesture} instance to specialize. 
-	 * This {@link Gesture} instance must be a {@code SwipeGesture} object.
+	 * This {@link Gesture} instance must be a {@link SwipeGesture} object.
 	 */
 	public SwipeGesture(Gesture rhs) {
 		this(LeapJNI.new_SwipeGesture__SWIG_1(Gesture.getCPtr(rhs), rhs), true);

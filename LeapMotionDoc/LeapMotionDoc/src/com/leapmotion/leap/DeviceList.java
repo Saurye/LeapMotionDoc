@@ -65,12 +65,12 @@ public class DeviceList extends Interface implements Iterable<Device> {
 	}
 
 	/**
-	 * Appends the members of the specified {@code DeviceList} to this {@code DeviceList}.
+	 * Appends the members of the specified {@link DeviceList} to this {@link DeviceList}.
 	 * 
-	 * @param other - A {@code DeviceList} object containing {@link Device} objects to append to 
-	 * the end of this {@code DeviceList}.
+	 * @param other - A {@link DeviceList} object containing {@link Device} objects to append to 
+	 * the end of this {@link DeviceList}.
 	 * 
-	 * @return the {@code DeviceList}, containing the members of {@code other}.
+	 * @return the {@link DeviceList}, containing the members of {@code other}.
 	 */
 	public DeviceList append(DeviceList other) {
 		return new DeviceList(LeapJNI.DeviceList_append(this.swigCPtr, this, getCPtr(other), other), false);

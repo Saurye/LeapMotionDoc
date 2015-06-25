@@ -43,10 +43,10 @@ public class Image extends Interface {
 	private long swigCPtr;
 
 	/**
-	 * Constructs a {@code Image} object.<p>
+	 * Constructs a {@link Image} object.<p>
 	 * 
 	 * An uninitialized image is considered invalid. 
-	 * Get valid {@code Image} objects from a {@link ImageList} object obtained from the {@link Frame#images()} method.
+	 * Get valid {@link Image} objects from a {@link ImageList} object obtained from the {@link Frame#images()} method.
 	 */
 	public Image() {
 		this(LeapJNI.new_Image(), true);
@@ -363,7 +363,7 @@ public class Image extends Interface {
 	}
 
 	/**
-	 * Reports whether this {@code Image} instance contains valid data.
+	 * Reports whether this {@link Image} instance contains valid data.
 	 * 
 	 * @return true, if and only if the image is valid.
 	 */
@@ -372,35 +372,35 @@ public class Image extends Interface {
 	}
 
 	/**
-	 * Returns an invalid {@code Image} object.<p>
+	 * Returns an invalid {@link Image} object.<p>
 	 * 
 	 * You can use the instance returned by this function in comparisons testing 
-	 * whether a given {@code Image} instance is valid or invalid. (You can also use the {@link Image#isValid()} function.)
+	 * whether a given {@link Image} instance is valid or invalid. (You can also use the {@link Image#isValid()} function.)
 	 * 
-	 * @return The invalid {@code Image} instance.
+	 * @return The invalid {@link Image} instance.
 	 */
 	public static Image invalid() {
 		return new Image(LeapJNI.Image_invalid(), false);
 	}
 
 	/**
-	 * Compare {@code Image} object equality.<p>
+	 * Compare {@link Image} object equality.<p>
 	 * 
-	 * Two {@code Image} objects are equal if and only if both {@code Image} objects represent 
-	 * the exact same {@code Image} and both Images are valid.
+	 * Two {@link Image} objects are equal if and only if both {@link Image} objects represent 
+	 * the exact same {@link Image} and both Images are valid.
 	 * 
-	 * @param image - {@code Image} object to compare
+	 * @param image - {@link Image} object to compare
 	 * 
-	 * @return true if the {@code Image} objects are equal.
+	 * @return true if the {@link Image} objects are equal.
 	 */
 	public boolean equals(Image image) {
 		return LeapJNI.Image_equals(this.swigCPtr, this, getCPtr(image), image);
 	}
 
 	/**
-	 * A string containing a brief, human readable description of the {@code Image} object.
+	 * A string containing a brief, human readable description of the {@link Image} object.
 	 * 
-	 * @return A description of the {@code Image} as a string.
+	 * @return A description of the {@link Image} as a string.
 	 */
 	public String toString() {
 		return LeapJNI.Image_toString(this.swigCPtr, this);

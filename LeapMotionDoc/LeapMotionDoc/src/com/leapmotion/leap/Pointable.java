@@ -40,10 +40,10 @@ public class Pointable extends Interface {
 	private long swigCPtr;
 	
 	/**
-	 * Constructs a {@code Pointable} object.<p>
+	 * Constructs a {@link Pointable} object.<p>
 	 * 
 	 * An uninitialized pointable is considered invalid. 
-	 * Get valid {@code Pointable} objects from a {@link Frame} or a {@link Hand} object.
+	 * Get valid {@link Pointable} objects from a {@link Frame} or a {@link Hand} object.
 	 * 
 	 * <blockquote><pre>
 	 * Pointable pointable = frame.pointables().frontmost(); 
@@ -60,7 +60,7 @@ public class Pointable extends Interface {
 	}
 
 	/**
-	 * A unique ID assigned to this {@code Pointable} object, 
+	 * A unique ID assigned to this {@link Pointable} object, 
 	 * whose value remains the same across consecutive frames while the tracked finger or tool remains visible.<p>
 	 * 
 	 * If tracking is lost (for example, when a finger is occluded by another finger 
@@ -72,7 +72,7 @@ public class Pointable extends Interface {
 	 * </pre></blockquote>
 	 * 
 	 * Use the ID value with the {@link Frame#pointable(int)} function to find 
-	 * this {@code Pointable} object in future frames.<p>
+	 * this {@link Pointable} object in future frames.<p>
 	 * 
 	 * IDs should be from 1 to 100 (inclusive). 
 	 * If more than 100 objects are tracked an IDs of -1 will be used until an ID in the defined range is available.
@@ -84,7 +84,7 @@ public class Pointable extends Interface {
 	}
 
 	/**
-	 * The {@link Frame} associated with this {@code Pointable} object.
+	 * The {@link Frame} associated with this {@link Pointable} object.
 	 * 
 	 * <blockquote><pre>
 	 * Frame frameOfThisPointableObject = pointable.frame();
@@ -151,7 +151,7 @@ public class Pointable extends Interface {
 	 * 
 	 * <img src="\images\Leap_Finger_Model.png"/><p>
 	 * 
-	 * @return The {@link Vector} pointing in the same direction as the tip of this {@code Pointable} object.
+	 * @return The {@link Vector} pointing in the same direction as the tip of this {@link Pointable} object.
 	 */
 	public Vector direction() {
 		return new Vector(LeapJNI.Pointable_direction(this.swigCPtr, this), true);
@@ -164,7 +164,7 @@ public class Pointable extends Interface {
 	 * float averageThickness = pointable.width();
 	 * </pre></blockquote>
 	 * 
-	 * @return The estimated width of this {@code Pointable} object.
+	 * @return The estimated width of this {@link Pointable} object.
 	 */
 	public float width() {
 		return LeapJNI.Pointable_width(this.swigCPtr, this);
@@ -177,14 +177,14 @@ public class Pointable extends Interface {
 	 * float apparentlength = pointable.length();
 	 * </pre></blockquote>
 	 * 
-	 * @return The estimated length of this {@code Pointable} object.
+	 * @return The estimated length of this {@link Pointable} object.
 	 */
 	public float length() {
 		return LeapJNI.Pointable_length(this.swigCPtr, this);
 	}
 
 	/**
-	 * Whether or not this {@code Pointable} is classified as a finger.
+	 * Whether or not this {@link Pointable} is classified as a finger.
 	 * 
 	 * <blockquote><pre>
 	 * if (pointable.isTool()) {
@@ -194,14 +194,14 @@ public class Pointable extends Interface {
 	 * }
 	 * </pre></blockquote>
 	 * 
-	 * @return True, if this {@code Pointable} is classified as a finger.
+	 * @return True, if this {@link Pointable} is classified as a finger.
 	 */
 	public boolean isFinger() {
 		return LeapJNI.Pointable_isFinger(this.swigCPtr, this);
 	}
 
 	/**
-	 * Whether or not this {@code Pointable} is classified as a tool.
+	 * Whether or not this {@link Pointable} is classified as a tool.
 	 * 
 	 * <blockquote><pre>
 	 * if (pointable.isTool()) {
@@ -211,14 +211,14 @@ public class Pointable extends Interface {
 	 * }
 	 * </pre></blockquote>
 	 * 
-	 * @return True, if this {@code Pointable} is classified as a tool.
+	 * @return True, if this {@link Pointable} is classified as a tool.
 	 */
 	public boolean isTool() {
 		return LeapJNI.Pointable_isTool(this.swigCPtr, this);
 	}
 
 	/**
-	 * Whether or not this {@code Pointable} is in an extended posture.<p>
+	 * Whether or not this {@link Pointable} is in an extended posture.<p>
 	 * 
 	 * A finger is considered extended if it is extended straight from the hand as if pointing. 
 	 * A finger is not extended when it is bent down and curled towards the palm. Tools are always extended.
@@ -237,7 +237,7 @@ public class Pointable extends Interface {
 	}
 
 	/**
-	 * Reports whether this is a valid {@code Pointable} object.
+	 * Reports whether this is a valid {@link Pointable} object.
 	 * 
 	 * <blockquote><pre>
 	 * if( pointable.isValid()) {
@@ -245,32 +245,32 @@ public class Pointable extends Interface {
 	 * }
 	 * </pre></blockquote>
 	 * 
-	 * @return True, if this {@code Pointable} object contains valid tracking data.
+	 * @return True, if this {@link Pointable} object contains valid tracking data.
 	 */
 	public boolean isValid() {
 		return LeapJNI.Pointable_isValid(this.swigCPtr, this);
 	}
 
 	/**
-	 * The current touch zone of this {@code Pointable} object.<p>
+	 * The current touch zone of this {@link Pointable} object.<p>
 	 * 
 	 * The Leap Motion software computes the touch zone based on a floating touch plane 
 	 * that adapts to the user’s finger movement and hand posture. 
 	 * The Leap Motion software interprets purposeful movements toward this plane 
-	 * as potential touch points. When a {@code Pointable} moves close to the adaptive touch plane, 
-	 * it enters the “hovering” zone. When a {@code Pointable} reaches or passes through the plane, 
+	 * as potential touch points. When a {@link Pointable} moves close to the adaptive touch plane, 
+	 * it enters the “hovering” zone. When a {@link Pointable} reaches or passes through the plane, 
 	 * it enters the “touching” zone.<p>
 	 * 
 	 * The possible states are present in the {@link Zone} enum of this class:<p>
 	 * 
-	 * <b>Zone.NONE</b> The {@code Pointable} is outside the hovering zone.<p>
+	 * <b>Zone.NONE</b> The {@link Pointable} is outside the hovering zone.<p>
 	 * 
-	 * <b>Zone.HOVERING</b> The {@code Pointable} is close to, but not touching the touch plane.<p>
+	 * <b>Zone.HOVERING</b> The {@link Pointable} is close to, but not touching the touch plane.<p>
 	 * 
-	 * <b>Zone.TOUCHING</b> The {@code Pointable} has penetrated the touch plane.<p>
+	 * <b>Zone.TOUCHING</b> The {@link Pointable} has penetrated the touch plane.<p>
 	 * 
 	 * The touchDistance value provides a normalized indication of the distance to the touch plane 
-	 * when the {@code Pointable} is in the hovering or touching zones.
+	 * when the {@link Pointable} is in the hovering or touching zones.
 	 * 
 	 * <blockquote><pre>
 	 * switch (pointable.touchZone()) {
@@ -289,23 +289,23 @@ public class Pointable extends Interface {
 	 * }
 	 * </pre></blockquote>
 	 * 
-	 * @return The touch zone of this {@code Pointable}.
+	 * @return The touch zone of this {@link Pointable}.
 	 */
 	public Zone touchZone() {
 		return Zone.swigToEnum(LeapJNI.Pointable_touchZone(this.swigCPtr, this));
 	}
 
 	/**
-	 * A value proportional to the distance between this {@code Pointable} object and the adaptive touch plane.<p>
+	 * A value proportional to the distance between this {@link Pointable} object and the adaptive touch plane.<p>
 	 * 
 	 * <img src="\images\Leap_Touch_Plane.png"/><p>
 	 * 
 	 * The touch distance is a value in the range [-1, 1]. 
-	 * The value 1.0 indicates the {@code Pointable} is at the far edge of the hovering zone. 
-	 * The value 0 indicates the {@code Pointable} is just entering the touching zone. 
-	 * A value of -1.0 indicates the {@code Pointable} is firmly within the touching zone. 
+	 * The value 1.0 indicates the {@link Pointable} is at the far edge of the hovering zone. 
+	 * The value 0 indicates the {@link Pointable} is just entering the touching zone. 
+	 * A value of -1.0 indicates the {@link Pointable} is firmly within the touching zone. 
 	 * Values in between are proportional to the distance from the plane. 
-	 * Thus, the touchDistance of 0.5 indicates that the {@code Pointable} is halfway into the hovering zone.
+	 * Thus, the touchDistance of 0.5 indicates that the {@link Pointable} is halfway into the hovering zone.
 	 * 
 	 * <blockquote><pre>
 	 * float distance = pointable.touchDistance();
@@ -319,14 +319,14 @@ public class Pointable extends Interface {
 	 * You can use the {@code touchDistance()} value to modulate visual feedback 
 	 * given to the user as their fingers close in on a touch target, such as a button.<p> 
 	 * 
-	 * @return The normalized touch distance of this {@code Pointable} object.
+	 * @return The normalized touch distance of this {@link Pointable} object.
 	 */
 	public float touchDistance() {
 		return LeapJNI.Pointable_touchDistance(this.swigCPtr, this);
 	}
 
 	/**
-	 * The stabilized tip position of this {@code Pointable}.<p>
+	 * The stabilized tip position of this {@link Pointable}.<p>
 	 * 
 	 * Smoothing and stabilization is performed in order to make this value 
 	 * more suitable for interaction with 2D content. 
@@ -337,7 +337,7 @@ public class Pointable extends Interface {
 	 * Vector stabilizedPosition = pointable.stabilizedTipPosition();
 	 * </pre></blockquote>
 	 * 
-	 * @return A modified tip position of this {@code Pointable} object 
+	 * @return A modified tip position of this {@link Pointable} object 
 	 * with some additional smoothing and stabilization applied.
 	 */
 	public Vector stabilizedTipPosition() {
@@ -345,23 +345,23 @@ public class Pointable extends Interface {
 	}
 
 	/**
-	 * The duration of time this {@code Pointable} has been visible to the Leap Motion {@link Controller}.
+	 * The duration of time this {@link Pointable} has been visible to the Leap Motion {@link Controller}.
 	 * 
 	 * <blockquote><pre>
 	 * float lifetime = pointable.timeVisible();
 	 * </pre></blockquote>
 	 * 
-	 * @return The duration (in seconds) that this {@code Pointable} has been tracked.
+	 * @return The duration (in seconds) that this {@link Pointable} has been tracked.
 	 */
 	public float timeVisible() {
 		return LeapJNI.Pointable_timeVisible(this.swigCPtr, this);
 	}
 
 	/**
-	 * Returns an invalid {@code Pointable} object.<p>
+	 * Returns an invalid {@link Pointable} object.<p>
 	 * 
 	 * You can use the instance returned by this function in comparisons testing 
-	 * whether a given {@code Pointable} instance is valid or invalid. 
+	 * whether a given {@link Pointable} instance is valid or invalid. 
 	 * (You can also use the {@link Pointable#isValid()} function.)
 	 * 
 	 * <blockquote><pre>
@@ -370,34 +370,34 @@ public class Pointable extends Interface {
 	 * }
 	 * </pre></blockquote>
 	 * 
-	 * @return The invalid {@code Pointable} instance.
+	 * @return The invalid {@link Pointable} instance.
 	 */
 	public static Pointable invalid() {
 		return new Pointable(LeapJNI.Pointable_invalid(), false);
 	}
 
 	/**
-	 * Compare {@code Pointable} object equality.
+	 * Compare {@link Pointable} object equality.
 	 * 
 	 * <blockquote><pre>
 	 * Boolean pointableIsEqual = thisPointable.equals(thatPointable);
 	 * </pre></blockquote>
 	 * 
-	 * Two {@code Pointable} objects are equal if and only if both {@code Pointable} objects 
-	 * represent the exact same physical entities in the same frame and both {@code Pointable} objects are valid.
+	 * Two {@link Pointable} objects are equal if and only if both {@link Pointable} objects 
+	 * represent the exact same physical entities in the same frame and both {@link Pointable} objects are valid.
 	 * 
-	 * @param mask - {@code Pointable} object to compare
+	 * @param mask - {@link Pointable} object to compare
 	 * 
-	 * @return true if the {@code Pointable} objects are equal.
+	 * @return true if the {@link Pointable} objects are equal.
 	 */
 	public boolean equals(Pointable pointable) {
 		return LeapJNI.Pointable_equals(this.swigCPtr, this, getCPtr(pointable), pointable);
 	}
 
 	/**
-	 * A string containing a brief, human readable description of the {@code Pointable} object.
+	 * A string containing a brief, human readable description of the {@link Pointable} object.
 	 * 
-	 * @return A description of the {@code Pointable} object as a string.
+	 * @return A description of the {@link Pointable} object as a string.
 	 */
 	public String toString() {
 		return LeapJNI.Pointable_toString(this.swigCPtr, this);

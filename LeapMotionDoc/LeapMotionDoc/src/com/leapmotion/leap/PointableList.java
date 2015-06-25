@@ -86,22 +86,22 @@ public class PointableList extends Interface implements Iterable<Pointable> {
 	}
 
 	/**
-	 * Appends the members of the specified {@code PointableList} to this {@code PointableList}.
+	 * Appends the members of the specified {@link PointableList} to this {@link PointableList}.
 	 * 
-	 * @param other - A {@code PointableList} object containing {@link Pointable} objects 
-	 * to append to the end of this {@code PointableList}.
+	 * @param other - A {@link PointableList} object containing {@link Pointable} objects 
+	 * to append to the end of this {@link PointableList}.
 	 * 
-	 * @return the {@code PointableList}, containing the members of {@code other}. 
+	 * @return the {@link PointableList}, containing the members of {@code other}. 
 	 */
 	public PointableList append(PointableList other) {
 		return new PointableList(LeapJNI.PointableList_append__SWIG_0(this.swigCPtr, this, getCPtr(other), other), false);
 	}
 
 	/**
-	 * Appends the members of the specified {@link FingerList} to this {@code PointableList}.
+	 * Appends the members of the specified {@link FingerList} to this {@link PointableList}.
 	 * 
 	 * @param other - A {@link FingerList} object containing {@link Finger} objects 
-	 * to append to the end of this {@code PointableList}.
+	 * to append to the end of this {@link PointableList}.
 	 * 
 	 * @return the {@link FingerList}, containing the members of {@code other}. 
 	 */
@@ -110,10 +110,10 @@ public class PointableList extends Interface implements Iterable<Pointable> {
 	}
 
 	/**
-	 * Appends the members of the specified {@link ToolList} to this {@code PointableList}.
+	 * Appends the members of the specified {@link ToolList} to this {@link PointableList}.
 	 * 
 	 * @param other - A {@link ToolList} object containing {@link Tool} objects 
-	 * to append to the end of this {@code PointableList}.
+	 * to append to the end of this {@link PointableList}.
 	 * 
 	 * @return the {@link ToolList}, containing the members of {@code other}. 
 	 */

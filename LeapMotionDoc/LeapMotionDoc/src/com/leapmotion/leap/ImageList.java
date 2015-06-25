@@ -56,19 +56,19 @@ public class ImageList extends Interface implements Iterable<Image> {
 	 * 
 	 * @param index - The zero-based list position index.
 	 * 
-	 * @return The {@code Image} object at the specified index.
+	 * @return The {@link Image} object at the specified index.
 	 */
 	public Image get(int index) {
 		return new Image(LeapJNI.ImageList_get(this.swigCPtr, this, index), true);
 	}
 
 	/**
-	 * Appends the members of the specified {@code ImageList} to this {@code ImageList}.
+	 * Appends the members of the specified {@link ImageList} to this {@link ImageList}.
 	 * 
-	 * @param other - A {@code ImageList} object containing {@link Image} objects 
-	 * to append to the end of this {@code ImageList}.
+	 * @param other - A {@link ImageList} object containing {@link Image} objects 
+	 * to append to the end of this {@link ImageList}.
 	 * 
-	 * @return the {@code ImageList}, containing the members of {@code other}.
+	 * @return the {@link ImageList}, containing the members of {@code other}.
 	 */
 	public ImageList append(ImageList other) {
 		return new ImageList(LeapJNI.ImageList_append(this.swigCPtr, this, getCPtr(other), other), false);

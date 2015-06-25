@@ -29,9 +29,9 @@ public class Hand extends Interface {
 	private long swigCPtr;
 
 	/**
-	 * Constructs a {@code Hand} object.<p>
+	 * Constructs a {@link Hand} object.<p>
 	 * 
-	 * An uninitialized hand is considered invalid. Get valid {@code Hand} objects from a {@link Frame} object.
+	 * An uninitialized hand is considered invalid. Get valid {@link Hand} objects from a {@link Frame} object.
 	 * 
 	 * <blockquote><pre>
 	 * Hand leftmostHand = frame.hands().leftmost();
@@ -48,14 +48,14 @@ public class Hand extends Interface {
 	}
 
 	/**
-	 * A unique ID assigned to this {@code Hand} object, whose value remains the same across consecutive frames 
+	 * A unique ID assigned to this {@link Hand} object, whose value remains the same across consecutive frames 
 	 * while the tracked hand remains visible.<p>
 	 * 
 	 * If tracking is lost (for example, when a hand is occluded by another hand 
 	 * or when it is withdrawn from or reaches the edge of the Leap Motion Controller field of view), 
 	 * the Leap Motion software may assign a new ID when it detects the hand in a future frame.<p>
 	 * 
-	 * Use the ID value with the {@link Frame#hand(int)} function to find this {@code Hand} object in future frames:
+	 * Use the ID value with the {@link Frame#hand(int)} function to find this {@link Hand} object in future frames:
 	 * 
 	 * <blockquote><pre>
 	 * Hand knownHand = frame.hand(handID);
@@ -68,7 +68,7 @@ public class Hand extends Interface {
 	}
 
 	/**
-	 * The {@link Frame} associated with this {@code Hand}.
+	 * The {@link Frame} associated with this {@link Hand}.
 	 * 
 	 * <blockquote><pre>
 	 * Frame frameForHand = hand.frame();
@@ -115,7 +115,7 @@ public class Hand extends Interface {
 	 * 
 	 * Note that the ID values assigned to fingers are based on the hand ID. Hand IDs persist across frames, 
 	 * but only until tracking of that hand is lost. 
-	 * If tracking of the hand is lost and subsequently regained, the new {@code Hand} object 
+	 * If tracking of the hand is lost and subsequently regained, the new {@link Hand} object 
 	 * and its child {@link Finger} objects will have a different ID than in an earlier frame.
 	 * 
 	 * @param id - The ID value of a {@link Pointable} object from a previous frame.
@@ -204,7 +204,7 @@ public class Hand extends Interface {
 	}
 
 	/**
-	 * The stabilized palm position of this {@code Hand}.<p>
+	 * The stabilized palm position of this {@link Hand}.<p>
 	 * 
 	 * Smoothing and stabilization is performed in order to make this value more suitable 
 	 * for interaction with 2D content. 
@@ -215,7 +215,7 @@ public class Hand extends Interface {
 	 * Vector filteredHandPosition = hand.stabilizedPalmPosition();
 	 * </pre></blockquote>
 	 * 
-	 * @return A modified palm position of this {@code Hand} object with some additional 
+	 * @return A modified palm position of this {@link Hand} object with some additional 
 	 * smoothing and stabilization applied.
 	 */
 	public Vector stabilizedPalmPosition() {
@@ -418,7 +418,7 @@ public class Hand extends Interface {
 	 * Vector linearHandMovement = hand.translation(startFrame);
 	 * </pre></blockquote>
 	 * 
-	 * If a corresponding {@code Hand} object is not found in sinceFrame, 
+	 * If a corresponding {@link Hand} object is not found in sinceFrame, 
 	 * or if either this frame or sinceFrame are invalid {@link Frame} objects, then this method returns a zero vector.
 	 * 
 	 * @param sinceFrame - The starting frame for computing the translation.
@@ -459,7 +459,7 @@ public class Hand extends Interface {
 	 * 
 	 * The returned direction vector is normalized.<p>
 	 * 
-	 * If a corresponding {@code Hand} object is not found in sinceFrame, 
+	 * If a corresponding {@link Hand} object is not found in sinceFrame, 
 	 * or if either this frame or sinceFrame are invalid {@link Frame} objects, then this method returns a zero vector.
 	 * 
 	 * @param sinceFrame - The starting frame for computing the relative rotation.
@@ -483,7 +483,7 @@ public class Hand extends Interface {
 	 * (using the right-hand rule) between the start and end frames. 
 	 * The value is always between 0 and pi radians (0 and 180 degrees).<p>
 	 * 
-	 * If a corresponding {@code Hand} object is not found in sinceFrame, 
+	 * If a corresponding {@link Hand} object is not found in sinceFrame, 
 	 * or if either this frame or sinceFrame are invalid {@link Frame} objects, then the angle of rotation is zero.
 	 * 
 	 * @param sinceFrame - The starting frame for computing the relative rotation.
@@ -507,7 +507,7 @@ public class Hand extends Interface {
 	 * (using the right-hand rule) between the start and end frames. 
 	 * The value is always between -pi and pi radians (-180 and 180 degrees).<p>
 	 * 
-	 * If a corresponding {@code Hand} object is not found in sinceFrame, 
+	 * If a corresponding {@link Hand} object is not found in sinceFrame, 
 	 * or if either this frame or sinceFrame are invalid {@link Frame} objects, then the angle of rotation is zero.
 	 * 
 	 * @param sinceFrame - The starting frame for computing the relative rotation.
@@ -528,7 +528,7 @@ public class Hand extends Interface {
 	 * Matrix handRotationTransform = hand.rotationMatrix(startFrame);
 	 * </pre></blockquote>
 	 * 
-	 * If a corresponding {@code Hand} object is not found in sinceFrame, 
+	 * If a corresponding {@link Hand} object is not found in sinceFrame, 
 	 * or if either this frame or sinceFrame are invalid {@link Frame} objects, then this method returns an identity matrix.
 	 * 
 	 * @param sinceFrame - The starting frame for computing the relative rotation.
@@ -548,7 +548,7 @@ public class Hand extends Interface {
 	 * float rotationIntentFactor = hand.rotationProbability(startFrame);
 	 * </pre></blockquote>
 	 * 
-	 * If a corresponding {@code Hand} object is not found in sinceFrame, 
+	 * If a corresponding {@link Hand} object is not found in sinceFrame, 
 	 * or if either this frame or sinceFrame are invalid {@link Frame} objects, then this method returns zero.
 	 * 
 	 * @param sinceFrame - The starting frame for computing the relative rotation.
@@ -573,7 +573,7 @@ public class Hand extends Interface {
 	 * The Leap Motion software derives scaling from the relative inward or outward motion of a hand 
 	 * and its associated fingers (independent of translation and rotation).<p>
 	 * 
-	 * If a corresponding {@code Hand} object is not found in sinceFrame, 
+	 * If a corresponding {@link Hand} object is not found in sinceFrame, 
 	 * or if either this frame or sinceFrame are invalid {@link Frame} objects, then this method returns 1.0.
 	 * 
 	 * @param sinceFrame - The starting frame for computing the relative scaling.
@@ -593,7 +593,7 @@ public class Hand extends Interface {
 	 * float scaleIntentFactor = hand.scaleProbability(startFrame);
 	 * </pre></blockquote>
 	 * 
-	 * If a corresponding {@code Hand} object is not found in sinceFrame, 
+	 * If a corresponding {@link Hand} object is not found in sinceFrame, 
 	 * or if either this frame or sinceFrame are invalid {@link Frame} objects, then this method returns zero.
 	 * 
 	 * @param sinceFrame - The starting frame for computing the relative scaling.
@@ -612,7 +612,7 @@ public class Hand extends Interface {
 	 * float lifetimeOfThisHandObject = hand.timeVisible();
 	 * </pre></blockquote>
 	 * 
-	 * @return The duration (in seconds) that this {@code Hand} has been tracked.
+	 * @return The duration (in seconds) that this {@link Hand} has been tracked.
 	 */
 	public float timeVisible() {
 		return LeapJNI.Hand_timeVisible(this.swigCPtr, this);
@@ -634,7 +634,7 @@ public class Hand extends Interface {
 	}
 
 	/**
-	 * Identifies whether this {@code Hand} is a left hand.
+	 * Identifies whether this {@link Hand} is a left hand.
 	 * 
 	 * <blockquote><pre>
 	 * String handName = hand.isLeft() ? "Left hand" : "Right hand";
@@ -647,7 +647,7 @@ public class Hand extends Interface {
 	}
 
 	/**
-	 * Identifies whether this {@code Hand} is a right hand.
+	 * Identifies whether this {@link Hand} is a right hand.
 	 * 
 	 * <blockquote><pre>
 	 * if(hand.isRight()) {
@@ -662,7 +662,7 @@ public class Hand extends Interface {
 	}
 
 	/**
-	 * Reports whether this is a valid {@code Hand} object.
+	 * Reports whether this is a valid {@link Hand} object.
 	 * 
 	 * <blockquote><pre>
 	 * if (hand.isValid()) {
@@ -670,14 +670,14 @@ public class Hand extends Interface {
 	 * }
 	 * </pre></blockquote>
 	 * 
-	 * @return True, if this {@code Hand} object contains valid tracking data.
+	 * @return True, if this {@link Hand} object contains valid tracking data.
 	 */
 	public boolean isValid() {
 		return LeapJNI.Hand_isValid(this.swigCPtr, this);
 	}
 
 	/**
-	 * Returns an invalid {@code Hand} object.
+	 * Returns an invalid {@link Hand} object.
 	 * 
 	 * <blockquote><pre>
 	 * if (!hand.equals(Hand.invalid())) {
@@ -686,36 +686,36 @@ public class Hand extends Interface {
 	 * </pre></blockquote>
 	 * 
 	 * You can use the instance returned by this function in comparisons testing 
-	 * whether a given {@code Hand} instance is valid or invalid. (You can also use the {@link Hand#isValid()} function.)
+	 * whether a given {@link Hand} instance is valid or invalid. (You can also use the {@link Hand#isValid()} function.)
 	 * 
-	 * @return The invalid {@code Hand} instance.
+	 * @return The invalid {@link Hand} instance.
 	 */
 	public static Hand invalid() {
 		return new Hand(LeapJNI.Hand_invalid(), false);
 	}
 
 	/**
-	 * Compare {@code Hand} object equality.
+	 * Compare {@link Hand} object equality.
 	 * 
 	 * <blockquote><pre>
 	 * Boolean handIsEqual = thisHand.equals(thatHand);
 	 * </pre></blockquote>
 	 * 
-	 * Two {@code Hand} objects are equal if and only if both {@code Hand} objects 
-	 * represent the exact same physical hand in the same frame and both {@code Hand} objects are valid.
+	 * Two {@link Hand} objects are equal if and only if both {@link Hand} objects 
+	 * represent the exact same physical hand in the same frame and both {@link Hand} objects are valid.
 	 * 
-	 * @param hand - {@code Hand} object to compare
+	 * @param hand - {@link Hand} object to compare
 	 * 
-	 * @return true if the {@code Hand} objects are equal.
+	 * @return true if the {@link Hand} objects are equal.
 	 */
 	public boolean equals(Hand hand) {
 		return LeapJNI.Hand_equals(this.swigCPtr, this, getCPtr(hand), hand);
 	}
 
 	/**
-	 * A string containing a brief, human readable description of the {@code Hand} object.
+	 * A string containing a brief, human readable description of the {@link Hand} object.
 	 * 
-	 * @return A description of the {@code Hand} as a string.
+	 * @return A description of the {@link Hand} as a string.
 	 */
 	public String toString() {
 		return LeapJNI.Hand_toString(this.swigCPtr, this);

@@ -98,12 +98,12 @@ public class FingerList extends Interface implements Iterable<Finger> {
 	}
 
 	/**
-	 * Appends the members of the specified {@code FingerList} to this {@code FingerList}.
+	 * Appends the members of the specified {@link FingerList} to this {@link FingerList}.
 	 * 
-	 * @param other - A {@code FingerList} object containing {@link Finger} objects to append 
-	 * to the end of this {@code FingerList}.
+	 * @param other - A {@link FingerList} object containing {@link Finger} objects to append 
+	 * to the end of this {@link FingerList}.
 	 * 
-	 * @return the {@code FingerList}, containing the members of {@code other}.
+	 * @return the {@link FingerList}, containing the members of {@code other}.
 	 */
 	public FingerList append(FingerList other) {
 		return new FingerList(LeapJNI.FingerList_append(this.swigCPtr, this, getCPtr(other), other), false);
@@ -172,7 +172,7 @@ public class FingerList extends Interface implements Iterable<Finger> {
 	 * Finger indexFinger = indexFingerList.get(0); //since there is only one per hand
 	 * </pre></blockquote>
 	 * 
-	 * @param type - the given type to filter the {@code FingerList} with.
+	 * @param type - the given type to filter the {@link FingerList} with.
 	 * 
 	 * @return The list of matching fingers from the current list.
 	 */

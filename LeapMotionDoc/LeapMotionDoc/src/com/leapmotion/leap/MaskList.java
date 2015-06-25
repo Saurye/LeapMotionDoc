@@ -64,10 +64,10 @@ public class MaskList extends Interface implements Iterable<Mask> {
 	/**
 	 * Appends the contents of another list of masks to this one.
 	 * 
-	 * @param other - A {@code MaskList} object containing {@link Mask} objects 
-	 * to append to the end of this {@code MaskList}.
+	 * @param other - A {@link MaskList} object containing {@link Mask} objects 
+	 * to append to the end of this {@link MaskList}.
 	 * 
-	 * @return the {@code GestureList}, containing the members of {@code other}.
+	 * @return the {@link GestureList}, containing the members of {@code other}.
 	 */
 	public MaskList append(MaskList other) {
 		return new MaskList(LeapJNI.MaskList_append(this.swigCPtr, this, getCPtr(other), other), false);

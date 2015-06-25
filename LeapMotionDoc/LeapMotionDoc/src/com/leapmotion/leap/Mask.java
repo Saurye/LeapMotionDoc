@@ -23,9 +23,9 @@ public class Mask extends Interface {
 	private long swigCPtr;
 
 	/**
-	 * Constructs a new {@code Mask} object.<p>
+	 * Constructs a new {@link Mask} object.<p>
 	 * 
-	 * Do not use. Get {@code Mask} objects from {@link TrackedQuad}.
+	 * Do not use. Get {@link Mask} objects from {@link TrackedQuad}.
 	 * 
 	 * <blockquote><pre>
 	 * Controller controller = new Controller();
@@ -162,18 +162,18 @@ public class Mask extends Interface {
 	}
 
 	/**
-	 * Reports whether this is a valid {@code Mask} object.
+	 * Reports whether this is a valid {@link Mask} object.
 	 * 
-	 * @return True, if this {@code Mask} object is valid.
+	 * @return True, if this {@link Mask} object is valid.
 	 */
 	public boolean isValid() {
 		return LeapJNI.Mask_isValid(this.swigCPtr, this);
 	}
 
 	/**
-	 * An invalid {@code Mask} object.
+	 * An invalid {@link Mask} object.
 	 * 
-	 * @return An invalid {@code Mask} object.
+	 * @return An invalid {@link Mask} object.
 	 */
 	public static Mask invalid() {
 		return new Mask(LeapJNI.Mask_invalid(), false);
@@ -182,18 +182,18 @@ public class Mask extends Interface {
 	/**
 	 * Compares two Mask objects for equality.
 	 * 
-	 * @param mask - {@code Mask} object to compare
+	 * @param mask - {@link Mask} object to compare
 	 * 
-	 * @return true if the {@code Mask} objects are equal.
+	 * @return true if the {@link Mask} objects are equal.
 	 */
 	public boolean equals(Mask mask) {
 		return LeapJNI.Mask_equals(this.swigCPtr, this, getCPtr(mask), mask);
 	}
 
 	/**
-	 * A string containing a brief, human readable description of the {@code Mask} object.
+	 * A string containing a brief, human readable description of the {@link Mask} object.
 	 * 
-	 * @return A description of the {@code Mask} as a string.
+	 * @return A description of the {@link Mask} as a string.
 	 */
 	public String toString() {
 		return LeapJNI.Mask_toString(this.swigCPtr, this);

@@ -20,7 +20,7 @@ public class TrackedQuad extends Interface {
 	private long swigCPtr;
 	
 	/**
-	 * Constructs a new {@code TrackedQuad} object.<p>
+	 * Constructs a new {@link TrackedQuad} object.<p>
 	 * 
 	 * Do not use. Get valid TrackedQuads from a {@link Controller} or {@link Frame} object.
 	 * 
@@ -173,10 +173,10 @@ public class TrackedQuad extends Interface {
 	}
 
 	/**
-	 * The images from which the state of this {@code TrackedQuad} was derived.<p>
+	 * The images from which the state of this {@link TrackedQuad} was derived.<p>
 	 * 
 	 * These are the same image objects that you can get from the {@link Controller} or {@link Frame} object 
-	 * from which you got this {@code TrackedQuad}.
+	 * from which you got this {@link TrackedQuad}.
 	 * 
 	 * <blockquote><pre>
 	 * TrackedQuad quad = frame.trackedQuad();
@@ -184,7 +184,7 @@ public class TrackedQuad extends Interface {
 	 * Image rightImage = quad.images().get(1);
 	 * </pre></blockquote>
 	 * 
-	 * @return The images from which the state of this {@code TrackedQuad} was derived.
+	 * @return The images from which the state of this {@link TrackedQuad} was derived.
 	 */
 	public ImageList images() {
 		return new ImageList(LeapJNI.TrackedQuad_images(this.swigCPtr, this), true);
@@ -200,7 +200,7 @@ public class TrackedQuad extends Interface {
 	 * }
 	 * </pre></blockquote>
 	 * 
-	 * @return True, if this {@code TrackedQuad} object is valid.
+	 * @return True, if this {@link TrackedQuad} object is valid.
 	 */
 	public boolean isValid() {
 		return LeapJNI.TrackedQuad_isValid(this.swigCPtr, this);
@@ -218,18 +218,18 @@ public class TrackedQuad extends Interface {
 	/**
 	 * Compares quad objects for equality.
 	 * 
-	 * @param trackedQuad - {@code TrackedQuad} object to compare
+	 * @param trackedQuad - {@link TrackedQuad} object to compare
 	 * 
-	 * @return true if the {@code TrackedQuad} objects are equal.
+	 * @return true if the {@link TrackedQuad} objects are equal.
 	 */
 	public boolean equals(TrackedQuad trackedQuad) {
 		return LeapJNI.TrackedQuad_equals(this.swigCPtr, this, getCPtr(trackedQuad), trackedQuad);
 	}
 
 	/**
-	 * A string containing a brief, human readable description of the {@code TrackedQuad} object.
+	 * A string containing a brief, human readable description of the {@link TrackedQuad} object.
 	 * 
-	 * @return A description of the {@code TrackedQuad} as a string.
+	 * @return A description of the {@link TrackedQuad} as a string.
 	 */
 	public String toString() {
 		return LeapJNI.TrackedQuad_toString(this.swigCPtr, this);

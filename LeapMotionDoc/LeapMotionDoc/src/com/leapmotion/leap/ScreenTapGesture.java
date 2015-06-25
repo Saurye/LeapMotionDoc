@@ -64,17 +64,17 @@ public class ScreenTapGesture extends Gesture {
 	private long swigCPtr;
 
 	/**
-	 * Constructs a new {@code ScreenTapGesture} object.<p>
+	 * Constructs a new {@link ScreenTapGesture} object.<p>
 	 * 
-	 * An uninitialized {@code ScreenTapGesture} object is considered invalid. 
-	 * Get valid instances of the {@code ScreenTapGesture} class from a {@link Frame} object.
+	 * An uninitialized {@link ScreenTapGesture} object is considered invalid. 
+	 * Get valid instances of the {@link ScreenTapGesture} class from a {@link Frame} object.
 	 */
 	public ScreenTapGesture() {
 		this(LeapJNI.new_ScreenTapGesture__SWIG_0(), true);
 	}
 	
 	/**
-	 * Constructs a {@code ScreenTapGesture} object from an instance of the {@link Gesture} class.
+	 * Constructs a {@link ScreenTapGesture} object from an instance of the {@link Gesture} class.
 	 * 
 	 * <blockquote><pre>
 	 * if(gesture.type() == Gesture.Type.TYPE_SCREEN_TAP) {
@@ -83,7 +83,7 @@ public class ScreenTapGesture extends Gesture {
 	 * </pre></blockquote>
 	 * 
 	 * @param rhs - The {@link Gesture} instance to specialize. 
-	 * This {@link Gesture} instance must be a {@code ScreenTapGesture} object.
+	 * This {@link Gesture} instance must be a {@link ScreenTapGesture} object.
 	 */
 	public ScreenTapGesture(Gesture rhs) {
 		this(LeapJNI.new_ScreenTapGesture__SWIG_1(Gesture.getCPtr(rhs), rhs), true);

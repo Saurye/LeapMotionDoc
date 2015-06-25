@@ -37,13 +37,13 @@ public class InteractionBox extends Interface {
 	 * </pre></blockquote>
 	 * 
 	 * Coordinates from the Leap Motion frame of reference (millimeters) are converted 
-	 * to a range of [0..1] such that the minimum value of the {@code InteractionBox} maps 
-	 * to 0 and the maximum value of the {@code InteractionBox} maps to 1.
+	 * to a range of [0..1] such that the minimum value of the {@link InteractionBox} maps 
+	 * to 0 and the maximum value of the {@link InteractionBox} maps to 1.
 	 * 
 	 * @param position - The input position in device coordinates.
 	 * 
 	 * @param clamp - Whether or not to limit the output value to the range [0,1] 
-	 * when the input position is outside the {@code InteractionBox}. Defaults to true.
+	 * when the input position is outside the {@link InteractionBox}. Defaults to true.
 	 * 
 	 * @return The normalized position.
 	 */
@@ -59,8 +59,8 @@ public class InteractionBox extends Interface {
 	 * </pre></blockquote>
 	 * 
 	 * Coordinates from the Leap Motion frame of reference (millimeters) are converted 
-	 * to a range of [0..1] such that the minimum value of the {@code InteractionBox} maps 
-	 * to 0 and the maximum value of the {@code InteractionBox} maps to 1.
+	 * to a range of [0..1] such that the minimum value of the {@link InteractionBox} maps 
+	 * to 0 and the maximum value of the {@link InteractionBox} maps to 1.
 	 * 
 	 * @param position - The input position in device coordinates.
 	 * 
@@ -71,7 +71,7 @@ public class InteractionBox extends Interface {
 	}
 
 	/**
-	 * Converts a position defined by normalized {@code InteractionBox} coordinates into device coordinates in millimeters.
+	 * Converts a position defined by normalized {@link InteractionBox} coordinates into device coordinates in millimeters.
 	 * 
 	 * <blockquote><pre>
 	 * InteractionBox interactionBox = frame.interactionBox();
@@ -91,7 +91,7 @@ public class InteractionBox extends Interface {
 	}
 
 	/**
-	 * The center of the {@code InteractionBox} in device coordinates (millimeters).<p>
+	 * The center of the {@link InteractionBox} in device coordinates (millimeters).<p>
 	 * 
 	 * This point is equidistant from all sides of the box.
 	 * 
@@ -99,53 +99,53 @@ public class InteractionBox extends Interface {
 	 * Vector boxCenter = interactionBox.center();
 	 * </pre></blockquote>
 	 * 
-	 * @return The {@code InteractionBox} center in device coordinates.
+	 * @return The {@link InteractionBox} center in device coordinates.
 	 */
 	public Vector center() {
 		return new Vector(LeapJNI.InteractionBox_center(this.swigCPtr, this), true);
 	}
 
 	/**
-	 * The width of the {@code InteractionBox} in millimeters, measured along the x-axis.
+	 * The width of the {@link InteractionBox} in millimeters, measured along the x-axis.
 	 * 
 	 * <blockquote><pre>
 	 * float boxDimensionAlongXAxis = interactionBox.width();
 	 * </pre></blockquote>
 	 * 
-	 * @return The {@code InteractionBox} width in millimeters.
+	 * @return The {@link InteractionBox} width in millimeters.
 	 */
 	public float width() {
 		return LeapJNI.InteractionBox_width(this.swigCPtr, this);
 	}
 
 	/**
-	 * The height of the {@code InteractionBox} in millimeters, measured along the y-axis.
+	 * The height of the {@link InteractionBox} in millimeters, measured along the y-axis.
 	 * 
 	 * <blockquote><pre>
 	 * float boxDimensionAlongYAxis = interactionBox.height();
 	 * </pre></blockquote>
 	 * 
-	 * @return The {@code InteractionBox} height in millimeters.
+	 * @return The {@link InteractionBox} height in millimeters.
 	 */
 	public float height() {
 		return LeapJNI.InteractionBox_height(this.swigCPtr, this);
 	}
 
 	/**
-	 * The depth of the {@code InteractionBox} in millimeters, measured along the z-axis.
+	 * The depth of the {@link InteractionBox} in millimeters, measured along the z-axis.
 	 * 
 	 * <blockquote><pre>
 	 * float boxDimensionAlongZAxis = interactionBox.depth();
 	 * </pre></blockquote>
 	 * 
-	 * @return The {@code InteractionBox} depth in millimeters.
+	 * @return The {@link InteractionBox} depth in millimeters.
 	 */
 	public float depth() {
 		return LeapJNI.InteractionBox_depth(this.swigCPtr, this);
 	}
 
 	/**
-	 * Reports whether this is a valid {@code InteractionBox} object.
+	 * Reports whether this is a valid {@link InteractionBox} object.
 	 * 
 	 * <blockquote><pre>
 	 * if (interactionBox.isValid()) {
@@ -153,7 +153,7 @@ public class InteractionBox extends Interface {
 	 * }
 	 * </pre></blockquote>
 	 * 
-	 * @return True, if this {@code InteractionBox} object contains valid data.
+	 * @return True, if this {@link InteractionBox} object contains valid data.
 	 */
 	public boolean isValid() {
 		return LeapJNI.InteractionBox_isValid(this.swigCPtr, this);
@@ -164,27 +164,27 @@ public class InteractionBox extends Interface {
 	}
 
 	/**
-	 * Compare {@code InteractionBox} object equality.
+	 * Compare {@link InteractionBox} object equality.
 	 * 
 	 * <blockquote><pre>
 	 * Boolean isBoxEqual = thisBox.equals(thatBox);
 	 * </pre></blockquote>
 	 * 
-	 * Two {@code InteractionBox} objects are equal if and only if both {@code InteractionBox} objects 
-	 * represent the exact same {@code InteractionBox} and both {@code InteractionBox} are valid.
+	 * Two {@link InteractionBox} objects are equal if and only if both {@link InteractionBox} objects 
+	 * represent the exact same {@link InteractionBox} and both {@link InteractionBox} are valid.
 	 * 
-	 * @param interactionBox - {@code InteractionBox} object to compare
+	 * @param interactionBox - {@link InteractionBox} object to compare
 	 * 
-	 * @return true if the {@code InteractionBox} objects are equal.
+	 * @return true if the {@link InteractionBox} objects are equal.
 	 */
 	public boolean equals(InteractionBox interactionBox) {
 		return LeapJNI.InteractionBox_equals(this.swigCPtr, this, getCPtr(interactionBox), interactionBox);
 	}
 
 	/**
-	 * A string containing a brief, human readable description of the {@code InteractionBox} object.
+	 * A string containing a brief, human readable description of the {@link InteractionBox} object.
 	 * 
-	 * @return A description of the {@code InteractionBox} as a string.
+	 * @return A description of the {@link InteractionBox} as a string.
 	 */
 	public String toString() {
 		return LeapJNI.InteractionBox_toString(this.swigCPtr, this);

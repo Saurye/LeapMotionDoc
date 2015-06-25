@@ -21,14 +21,14 @@ public class Device extends Interface {
 	private long swigCPtr;
 
 	/**
-	 * Constructs a {@code Device} object.<p>
+	 * Constructs a {@link Device} object.<p>
 	 * 
 	 * <blockquote><pre>
 	 * Device device = controller.devices().get(0);
 	 * </pre></blockquote>
 	 * 
 	 * An uninitialized device is considered invalid. 
-	 * Get valid {@code Device} objects from a {@link DeviceList} object obtained using 
+	 * Get valid {@link Device} objects from a {@link DeviceList} object obtained using 
 	 * the {@link Controller#devices()} method.
 	 */
 	public Device() {
@@ -198,7 +198,7 @@ public class Device extends Interface {
 	}
 
 	/**
-	 * Reports whether this is a valid {@code Device} object.
+	 * Reports whether this is a valid {@link Device} object.
 	 * 
 	 * <blockquote><pre>
 	 * if (!device.isValid()) {
@@ -206,17 +206,17 @@ public class Device extends Interface {
 	 * }
 	 * </pre></blockquote>
 	 * 
-	 * @return True, if this {@code Device} object contains valid data.
+	 * @return True, if this {@link Device} object contains valid data.
 	 */
 	public boolean isValid() {
 		return LeapJNI.Device_isValid(this.swigCPtr, this);
 	}
 
 	/**
-	 * Returns an invalid {@code Device} object.<p>
+	 * Returns an invalid {@link Device} object.<p>
 	 * 
 	 * You can use the instance returned by this function in comparisons testing whether a given 
-	 * {@code Device} instance is valid or invalid. (You can also use the {@link Device#isValid()} function.)
+	 * {@link Device} instance is valid or invalid. (You can also use the {@link Device#isValid()} function.)
 	 * 
 	 * <blockquote><pre>
 	 * if (device != Device.invalid()) {
@@ -224,32 +224,32 @@ public class Device extends Interface {
 	 * }
 	 * </pre></blockquote>
 	 * 
-	 * @return The invalid {@code Device} instance.
+	 * @return The invalid {@link Device} instance.
 	 */
 	public static Device invalid() {
 		return new Device(LeapJNI.Device_invalid(), false);
 	}
 
 	/**
-	 * Compare {@code Device} object equality.
+	 * Compare {@link Device} object equality.
 	 * 
 	 * <blockquote><pre>
 	 * Boolean isEqual = thisDevice.equals(thatDevice);
 	 * </pre></blockquote>
 	 * 
-	 * Two {@code Device} objects are equal if and only if both {@code Device} objects 
-	 * represent the exact same {@code Device} and both Devices are valid.
+	 * Two {@link Device} objects are equal if and only if both {@link Device} objects 
+	 * represent the exact same {@link Device} and both Devices are valid.
 	 * 
-	 * @param device - {@code Device} object to compare
+	 * @param device - {@link Device} object to compare
 	 * 
-	 * @return true if the {@code Device} objects are equal.
+	 * @return true if the {@link Device} objects are equal.
 	 */
 	public boolean equals(Device device) {
 		return LeapJNI.Device_equals(this.swigCPtr, this, getCPtr(device), device);
 	}
 
 	/**
-	 * A string containing a brief, human readable description of the {@code Device} object.
+	 * A string containing a brief, human readable description of the {@link Device} object.
 	 * 
 	 * @return A description of the Device as a string.
 	 */

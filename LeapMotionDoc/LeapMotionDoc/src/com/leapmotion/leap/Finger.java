@@ -28,10 +28,10 @@ public class Finger extends Pointable {
 	private long swigCPtr;
 
 	/**
-	 * Constructs a {@code Finger} object.<p>
+	 * Constructs a {@link Finger} object.<p>
 	 * 
 	 * An uninitialized finger is considered invalid. 
-	 * Get valid {@code Finger} objects from a {@link Frame} or a {@link Hand} object.
+	 * Get valid {@link Finger} objects from a {@link Frame} or a {@link Hand} object.
 	 */
 	public Finger() {
 		this(LeapJNI.new_Finger__SWIG_0(), true);
@@ -39,7 +39,7 @@ public class Finger extends Pointable {
 	
 	/**
 	 * If the specified {@link Pointable} object represents a finger, 
-	 * creates a copy of it as a {@code Finger} object; otherwise, creates an invalid {@code Finger} object.
+	 * creates a copy of it as a {@link Finger} object; otherwise, creates an invalid {@link Finger} object.
 	 * 
 	 * <blockquote><pre>
 	 * Finger finger = new Finger(pointableObject);
@@ -100,29 +100,29 @@ public class Finger extends Pointable {
 	}
 
 	/**
-	 * Returns an invalid {@code Finger} object.<p>
+	 * Returns an invalid {@link Finger} object.<p>
 	 * 
 	 * You can use the instance returned by this function in comparisons testing whether 
-	 * a given {@code Finger} instance is valid or invalid. (You can also use the {@link Finger#isValid()} function.)
+	 * a given {@link Finger} instance is valid or invalid. (You can also use the {@link Finger#isValid()} function.)
 	 * 
 	 * <blockquote><pre>
 	 * Finger invalidFinger = Finger.invalid();
 	 * </pre></blockquote>
 	 * 
-	 * @return The invalid {@code Finger} instance.
+	 * @return The invalid {@link Finger} instance.
 	 */
 	public static Finger invalid() {
 		return new Finger(LeapJNI.Finger_invalid(), false);
 	}
 
 	/**
-	 * A string containing a brief, human readable description of the {@code Finger} object.
+	 * A string containing a brief, human readable description of the {@link Finger} object.
 	 * 
 	 * <blockquote><pre>
 	 * String description = finger.toString();
 	 * </pre></blockquote>
 	 * 
-	 * @return A description of the {@code Finger} object as a string.
+	 * @return A description of the {@link Finger} object as a string.
 	 */
 	public String toString() {
 		return LeapJNI.Finger_toString(this.swigCPtr, this);

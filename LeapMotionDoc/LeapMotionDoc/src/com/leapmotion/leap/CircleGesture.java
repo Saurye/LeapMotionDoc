@@ -64,17 +64,17 @@ public class CircleGesture extends Gesture {
 	private long swigCPtr;
 
 	/**
-	 * Constructs a new {@code CircleGesture} object.<p>
+	 * Constructs a new {@link CircleGesture} object.<p>
 	 * 
-	 * An uninitialized {@code CircleGesture} object is considered invalid. 
-	 * Get valid instances of the {@code CircleGesture} class from a {@link Frame} object.
+	 * An uninitialized {@link CircleGesture} object is considered invalid. 
+	 * Get valid instances of the {@link CircleGesture} class from a {@link Frame} object.
 	 */
 	public CircleGesture() {
 		this(LeapJNI.new_CircleGesture__SWIG_0(), true);
 	}
 
 	/**
-	 * Constructs a {@code CircleGesture} object from an instance of the {@link Gesture} class.
+	 * Constructs a {@link CircleGesture} object from an instance of the {@link Gesture} class.
 	 * 
 	 * <blockquote><pre>
 	 * if(gesture.type() == Gesture.Type.TYPE_CIRCLE) {
@@ -83,7 +83,7 @@ public class CircleGesture extends Gesture {
 	 * </pre></blockquote>
 	 * 
 	 * @param rhs - The {@link Gesture} instance to specialize. 
-	 * This {@link Gesture} instance must be a {@code CircleGesture} object.
+	 * This {@link Gesture} instance must be a {@link CircleGesture} object.
 	 */
 	public CircleGesture(Gesture rhs) {
 		this(LeapJNI.new_CircleGesture__SWIG_1(Gesture.getCPtr(rhs), rhs), true);

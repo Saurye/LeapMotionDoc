@@ -21,7 +21,7 @@ public class Listener {
 	protected boolean swigCMemOwn;
 
 	/**
-	 * Constructs a {@code Listener} object.
+	 * Constructs a {@link Listener} object.
 	 */
 	public Listener() {
 		this(LeapJNI.new_Listener(), true);
@@ -49,7 +49,7 @@ public class Listener {
 	}
 
 	/**
-	 * Called once, when this {@code Listener} object is newly added to a {@link Controller}.
+	 * Called once, when this {@link Listener} object is newly added to a {@link Controller}.
 	 * 
 	 * <blockquote><pre>
 	 * public void onInit (Controller controller){
@@ -65,7 +65,7 @@ public class Listener {
 
 	/**
 	 * Called when the {@link Controller} object connects to the Leap Motion software 
-	 * and the Leap Motion hardware device is plugged in, or when this {@code Listener} object is added 
+	 * and the Leap Motion hardware device is plugged in, or when this {@link Listener} object is added 
 	 * to a {@link Controller} that is already connected.<p>
 	 * 
 	 * When this callback is invoked, {@link Controller#isServiceConnected()} is true, 
@@ -108,7 +108,7 @@ public class Listener {
 	}
 
 	/**
-	 * Called when this {@code Listener} object is removed from the {@link Controller} 
+	 * Called when this {@link Listener} object is removed from the {@link Controller} 
 	 * or the {@link Controller} instance is destroyed.
 	 * 
 	 * <blockquote><pre>

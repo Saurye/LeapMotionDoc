@@ -28,13 +28,13 @@ public class Matrix {
 	}
 
 	/**
-	 * Constructs a copy of the specified {@code Matrix} object.
+	 * Constructs a copy of the specified {@link Matrix} object.
 	 * 
 	 * <blockquote><pre>
 	 * Matrix thisMatrix = new Matrix(thatMatrix);
 	 * </pre></blockquote>
 	 * 
-	 * @param other - the specified {@code Matrix} object.
+	 * @param other - the specified {@link Matrix} object.
 	 */
 	public Matrix(Matrix other) {
 		this(LeapJNI.new_Matrix__SWIG_1(getCPtr(other), other), true);
@@ -246,9 +246,9 @@ public class Matrix {
 	 * thisMatrix.times(thatMatrix);
 	 * </pre></blockquote>
 	 * 
-	 * @param other - A {@code Matrix} to multiply on the right hand side.
+	 * @param other - A {@link Matrix} to multiply on the right hand side.
 	 * 
-	 * @return A new {@code Matrix} representing the transformation equivalent 
+	 * @return A new {@link Matrix} representing the transformation equivalent 
 	 * to applying the other transformation followed by this transformation.
 	 */
 	public Matrix times(Matrix other) {
@@ -256,15 +256,15 @@ public class Matrix {
 	}
 
 	/**
-	 * Compare {@code Matrix} equality component-wise.
+	 * Compare {@link Matrix} equality component-wise.
 	 * 
 	 * <blockquote><pre>
 	 * thisMatrix.equals(thatMatrix);
 	 * </pre></blockquote>
 	 * 
-	 * @param matrix - {@code Matrix} object to compare
+	 * @param matrix - {@link Matrix} object to compare
 	 * 
-	 * @return true if the {@code Matrix} objects are equal.
+	 * @return true if the {@link Matrix} objects are equal.
 	 */
 	public boolean equals(Matrix matrix) {
 		return LeapJNI.Matrix_equals(this.swigCPtr, this, getCPtr(matrix), matrix);
@@ -273,7 +273,7 @@ public class Matrix {
 	/**
 	 * Write the matrix to a string in a human readable format.
 	 * 
-	 * @return A description of the {@code Matrix} object as a string.
+	 * @return A description of the {@link Matrix} object as a string.
 	 */
 	public String toString() {
 		return LeapJNI.Matrix_toString(this.swigCPtr, this);

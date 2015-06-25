@@ -24,10 +24,10 @@ public class Frame extends Interface {
 	private long swigCPtr;
 
 	/**
-	 * Constructs a {@code Frame} object.<p>
+	 * Constructs a {@link Frame} object.<p>
 	 * 
-	 * {@code Frame} instances created with this constructor are invalid. 
-	 * Get valid {@code Frame} objects by calling the {@link Controller#frame()} function.
+	 * {@link Frame} instances created with this constructor are invalid. 
+	 * Get valid {@link Frame} objects by calling the {@link Controller#frame()} function.
 	 * 
 	 * <blockquote><pre>
 	 * Frame current = controller.frame();
@@ -35,7 +35,7 @@ public class Frame extends Interface {
 	 * </pre></blockquote>
 	 * 
 	 * The only time you should use this constructor is before deserializing serialized frame data. 
-	 * Call {@link Frame#deserialize(byte[])} to recreate a saved {@code Frame}.
+	 * Call {@link Frame#deserialize(byte[])} to recreate a saved {@link Frame}.
 	 */
 	public Frame() {
 		this(LeapJNI.new_Frame(), true);
@@ -48,7 +48,7 @@ public class Frame extends Interface {
 	}
 
 	/**
-	 * Encodes this {@code Frame} object as a byte string.
+	 * Encodes this {@link Frame} object as a byte string.
 	 * 
 	 * <blockquote><pre>
 	 * byte[] serializedFrame = frame.serialize();
@@ -65,7 +65,7 @@ public class Frame extends Interface {
 	}
 
 	/**
-	 * Decodes a byte string to replace the properties of this {@code Frame}.<p>
+	 * Decodes a byte string to replace the properties of this {@link Frame}.<p>
 	 * 
 	 * A {@link Controller} object must be instantiated for this function to succeed, but it does not need to be connected. 
 	 * To extract gestures from the deserialized frame, you must enable the appropriate gestures first.<p>
@@ -81,7 +81,7 @@ public class Frame extends Interface {
 	 * reconstructedFrame.deserialize(frameBytes);
 	 * </pre></blockquote>
 	 * 
-	 * <b>Note:</b> The behavior when calling functions which take another {@code Frame} object as a parameter 
+	 * <b>Note:</b> The behavior when calling functions which take another {@link Frame} object as a parameter 
 	 * is undefined when either frame has been deserialized. For example,
 	 * calling {@link Frame#gestures(sinceFrame)} on a deserialized frame or with a deserialized frame as parameter (or both) 
 	 * does not necessarily return all gestures that occurred between the two frames. 
@@ -96,10 +96,10 @@ public class Frame extends Interface {
 	}
 
 	/**
-	 * A unique ID for this {@code Frame}.<p>
+	 * A unique ID for this {@link Frame}.<p>
 	 * 
 	 * Consecutive frames processed by the Leap Motion software have consecutive increasing values. 
-	 * You can use the frame ID to avoid processing the same {@code Frame} object twice:
+	 * You can use the frame ID to avoid processing the same {@link Frame} object twice:
 	 * 
 	 * <blockquote><pre>
 	 * long lastFrameID = 0;
@@ -361,7 +361,7 @@ public class Frame extends Interface {
 	 * GestureList gesturesSinceFrame = frame.gestures(lastProcessedFrame);
 	 * </pre></blockquote>
 	 * 
-	 * @param sinceFrame - An earlier {@codew Frame} object. 
+	 * @param sinceFrame - An earlier {@linkw Frame} object. 
 	 * The starting frame must still be in the frame history cache, which has a default length of 60 frames.
 	 * 
 	 * @return {@link GestureList}The list of the {@link Gesture} objects that have occurred since the specified frame.
@@ -373,7 +373,7 @@ public class Frame extends Interface {
 	/**
 	 * The list of images from the Leap Motion cameras.
 	 * 
-	 * @return An {@link ImageList} object containing the camera images analyzed to create this {@code Frame}.
+	 * @return An {@link ImageList} object containing the camera images analyzed to create this {@link Frame}.
 	 */
 	public ImageList images() {
 		return new ImageList(LeapJNI.Frame_images(this.swigCPtr, this), true);
@@ -391,7 +391,7 @@ public class Frame extends Interface {
 	 * The Leap Motion software derives frame translation from the linear motion 
 	 * of all objects detected in the field of view.<p>
 	 * 
-	 * If either this frame or sinceFrame is an invalid {@code Frame} object, then this method returns a zero vector.
+	 * If either this frame or sinceFrame is an invalid {@link Frame} object, then this method returns a zero vector.
 	 * 
 	 * @param sinceFrame - The starting frame for computing the relative translation.
 	 * @return A {@link Vector} representing the heuristically determined change 
@@ -409,7 +409,7 @@ public class Frame extends Interface {
 	 * float translationDominance = frame.translationProbability(startFrame);
 	 * </pre></blockquote>
 	 * 
-	 * If either this frame or sinceFrame is an invalid {@code Frame} object, then this method returns zero.
+	 * If either this frame or sinceFrame is an invalid {@link Frame} object, then this method returns zero.
 	 * 
 	 * @param sinceFrame - The starting frame for computing the translation.
 	 * 
@@ -432,7 +432,7 @@ public class Frame extends Interface {
 	 * The Leap Motion software derives frame rotation from the relative change in position 
 	 * and orientation of all objects detected in the field of view.<p>
 	 * 
-	 * If either this frame or sinceFrame is an invalid {@code Frame} object, 
+	 * If either this frame or sinceFrame is an invalid {@link Frame} object, 
 	 * or if no rotation is detected between the two frames, a zero vector is returned.
 	 * 
 	 * @param sinceFrame - The starting frame for computing the relative rotation.
@@ -459,7 +459,7 @@ public class Frame extends Interface {
 	 * The Leap Motion software derives frame rotation from the relative change in position 
 	 * and orientation of all objects detected in the field of view.<p>
 	 * 
-	 * If either this frame or sinceFrame is an invalid {@code Frame} object, then the angle of rotation is zero.
+	 * If either this frame or sinceFrame is an invalid {@link Frame} object, then the angle of rotation is zero.
 	 * 
 	 * @param sinceFrame - The starting frame for computing the relative rotation.
 	 * 
@@ -485,7 +485,7 @@ public class Frame extends Interface {
 	 * The Leap Motion software derives frame rotation from the relative change in position 
 	 * and orientation of all objects detected in the field of view.<p>
 	 * 
-	 * If either this frame or sinceFrame is an invalid {@code Frame} object, then the angle of rotation is zero.
+	 * If either this frame or sinceFrame is an invalid {@link Frame} object, then the angle of rotation is zero.
 	 * 
 	 * @param sinceFrame - The starting frame for computing the relative rotation.
 	 * @param axis - The axis to measure rotation around.
@@ -508,7 +508,7 @@ public class Frame extends Interface {
 	 * The Leap Motion software derives frame rotation from the relative change in position 
 	 * and orientation of all objects detected in the field of view.<p>
 	 * 
-	 * If either this frame or sinceFrame is an invalid {@code Frame} object, then this method returns an identity matrix.
+	 * If either this frame or sinceFrame is an invalid {@link Frame} object, then this method returns an identity matrix.
 	 * 
 	 * @param sinceFrame - The starting frame for computing the relative rotation.
 	 * 
@@ -527,7 +527,7 @@ public class Frame extends Interface {
 	 * float rotationDominance = frame.rotationProbability(startFrame);
 	 * </pre></blockquote>
 	 * 
-	 * If either this frame or sinceFrame is an invalid {@code Frame} object, then this method returns zero.
+	 * If either this frame or sinceFrame is an invalid {@link Frame} object, then this method returns zero.
 	 * 
 	 * @param sinceFrame - The starting frame for computing the relative rotation.
 	 * 
@@ -551,7 +551,7 @@ public class Frame extends Interface {
 	 * The Leap Motion software derives scaling from the relative inward or outward motion 
 	 * of all objects detected in the field of view (independent of translation and rotation).<p>
 	 * 
-	 * If either this frame or sinceFrame is an invalid {@code Frame} object, then this method returns 1.0.
+	 * If either this frame or sinceFrame is an invalid {@link Frame} object, then this method returns 1.0.
 	 * 
 	 * @param sinceFrame - The starting frame for computing the relative scaling.
 	 * 
@@ -570,7 +570,7 @@ public class Frame extends Interface {
 	 * float scaleDominance = frame.scaleProbability(startFrame);
 	 * </pre></blockquote>
 	 * 
-	 * If either this frame or sinceFrame is an invalid {@code Frame} object, then this method returns zero.
+	 * If either this frame or sinceFrame is an invalid {@link Frame} object, then this method returns zero.
 	 * 
 	 * @param sinceFrame - The starting frame for computing the relative scaling.
 	 * 
@@ -614,13 +614,13 @@ public class Frame extends Interface {
 	}
 
 	/**
-	 * Reports whether this {@code Frame} instance is valid.<p>
+	 * Reports whether this {@link Frame} instance is valid.<p>
 	 * 
-	 * A valid {@code Frame} is one generated by the {@link Controller} object that contains 
+	 * A valid {@link Frame} is one generated by the {@link Controller} object that contains 
 	 * tracking data for all detected entities. 
-	 * An invalid {@code Frame} contains no actual tracking data, 
+	 * An invalid {@link Frame} contains no actual tracking data, 
 	 * but you can call its functions without risk of a null pointer exception. 
-	 * The invalid {@code Frame} mechanism makes it more convenient to track individual data across 
+	 * The invalid {@link Frame} mechanism makes it more convenient to track individual data across 
 	 * the frame history. 
 	 * For example, you can invoke:
 	 * 
@@ -628,20 +628,20 @@ public class Frame extends Interface {
 	 * Finger finger = controller.frame(n).finger(fingerID);
 	 * </pre></blockquote>
 	 * 
-	 * for an arbitrary {@code Frame} history value, “n”, without first checking whether frame(n) returned a null object. 
+	 * for an arbitrary {@link Frame} history value, “n”, without first checking whether frame(n) returned a null object. 
 	 * (You should still check that the returned {@link Finger} instance is valid.)
 	 * 
-	 * @return True, if this is a valid {@code Frame} object; false otherwise.
+	 * @return True, if this is a valid {@link Frame} object; false otherwise.
 	 */
 	public boolean isValid() {
 		return LeapJNI.Frame_isValid(this.swigCPtr, this);
 	}
 
 	/**
-	 * Returns an invalid {@code Frame} object.<p>
+	 * Returns an invalid {@link Frame} object.<p>
 	 * 
 	 * You can use the instance returned by this function in comparisons testing whether 
-	 * a given {@code Frame} instance is valid or invalid. (You can also use the {@link Frame#isValid()} function.)
+	 * a given {@link Frame} instance is valid or invalid. (You can also use the {@link Frame#isValid()} function.)
 	 * 
 	 * <blockquote><pre>
 	 * //Average a finger position for the last 10 frames
@@ -658,25 +658,25 @@ public class Frame extends Interface {
 	 * }
 	 * </pre></blockquote>
 	 * 
-	 * @return The invalid {@code Frame} instance.
+	 * @return The invalid {@link Frame} instance.
 	 */
 	public static Frame invalid() {
 		return new Frame(LeapJNI.Frame_invalid(), false);
 	}
 
 	/**
-	 * Compare {@code Frame} object equality.
+	 * Compare {@link Frame} object equality.
 	 * 
 	 * <blockquote><pre>
 	 * Boolean isFrameEqual = thisFrame.equals(thatFrame);
 	 * </pre></blockquote>
 	 * 
-	 * Two {@code Frame} objects are equal if and only if both {@code Frame} objects 
-	 * represent the exact same frame of tracking data and both {@code Frame} objects are valid.
+	 * Two {@link Frame} objects are equal if and only if both {@link Frame} objects 
+	 * represent the exact same frame of tracking data and both {@link Frame} objects are valid.
 	 * 
-	 * @param frame - {@code Frame} object to compare
+	 * @param frame - {@link Frame} object to compare
 	 * 
-	 * @return true if the {@code Frame} objects are equal.
+	 * @return true if the {@link Frame} objects are equal.
 	 */
 	public boolean equals(Frame frame) {
 		return LeapJNI.Frame_equals(this.swigCPtr, this, getCPtr(frame), frame);
@@ -707,9 +707,9 @@ public class Frame extends Interface {
 	}
 
 	/**
-	 * A string containing a brief, human readable description of the {@code Frame} object.
+	 * A string containing a brief, human readable description of the {@link Frame} object.
 	 * 
-	 * @return A description of the {@code Frame} as a string.
+	 * @return A description of the {@link Frame} as a string.
 	 */
 	public String toString() {
 		return LeapJNI.Frame_toString(this.swigCPtr, this);

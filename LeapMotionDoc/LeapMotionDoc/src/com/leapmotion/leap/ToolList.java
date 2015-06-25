@@ -82,12 +82,12 @@ public class ToolList extends Interface implements Iterable<Tool> {
 	}
 
 	/**
-	 * Appends the members of the specified {@code ToolList} to this {@code ToolList}.
+	 * Appends the members of the specified {@link ToolList} to this {@link ToolList}.
 	 * 
-	 * @param other - A {@code ToolList} object containing {@link Tool} objects 
-	 * to append to the end of this {@code ToolList}.
+	 * @param other - A {@link ToolList} object containing {@link Tool} objects 
+	 * to append to the end of this {@link ToolList}.
 	 * 
-	 * @return the {@code ToolList}, containing the members of {@code other}. 
+	 * @return the {@link ToolList}, containing the members of {@code other}. 
 	 */
 	public ToolList append(ToolList other) {
 		return new ToolList(LeapJNI.ToolList_append(this.swigCPtr, this, getCPtr(other), other), false);

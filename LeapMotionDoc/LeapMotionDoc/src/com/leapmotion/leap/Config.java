@@ -4,7 +4,7 @@ package com.leapmotion.leap;
  * The {@code Config} class provides access to Leap Motion system configuration information.<p>
  * 
  * You can get and set gesture configuration parameters using the {@code Config} object obtained from 
- * a connected {@code Controller} object. The key strings required to identify a configuration parameter include:
+ * a connected {@link Controller} object. The key strings required to identify a configuration parameter include:
  * <p>
  * <table>
  * <thead>
@@ -69,9 +69,9 @@ public class Config extends Interface {
 	private long swigCPtr;
 
 	/**
-	 * Constructs a {@code Config} object.<p>
+	 * Constructs a {@link Config} object.<p>
 	 * 
-	 * Do not create your own {@code Config} objects. Get a {@code Config} object using the 
+	 * Do not create your own {@link Config} objects. Get a {@link Config} object using the 
 	 * {@link Controller#config()} function.
 	 * 
 	 * <blockquote><pre>
