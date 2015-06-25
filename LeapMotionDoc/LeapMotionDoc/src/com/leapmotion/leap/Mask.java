@@ -190,6 +190,11 @@ public class Mask extends Interface {
 		return LeapJNI.Mask_equals(this.swigCPtr, this, getCPtr(mask), mask);
 	}
 
+	/**
+	 * A string containing a brief, human readable description of the {@code Mask} object.
+	 * 
+	 * @return A description of the {@code Mask} as a string.
+	 */
 	public String toString() {
 		return LeapJNI.Mask_toString(this.swigCPtr, this);
 	}
